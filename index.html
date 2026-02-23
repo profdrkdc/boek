@@ -108,5 +108,37 @@
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-</body>
+  <script>
+    // Functie om de actieve links in de versie-switcher te markeren
+    function markActiveLinks() {
+      const params = new URLSearchParams(window.location.search);
+      const track = params.get('t') || 'manueel';
+      const version = params.get('v') || 'origineel';
+
+      document.querySelectorAll('.version-switcher a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.includes(`t=${track}`) || (href.startsWith('?v=') && href.includes(`v=${version}`))) {
+          // We moeten specifiek zijn: als de link een traject bevat, check traject. Als het alleen een versie bevat, check versie.
+          if (href.includes('t=') && href.includes(`t=${track}`)) {
+            link.classList.add('active');
+          } else if (!href.includes('t=') && href.includes(`v=${version}`)) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Docsify hook om de actieve links te markeren nadat de sidebar is geladen
+    window.$docsify.plugins = [
+      function(hook) {
+        hook.doneEach(function() {
+          markActiveLinks();
+        });
+      }
+    ];
+  </script>
 </html>
