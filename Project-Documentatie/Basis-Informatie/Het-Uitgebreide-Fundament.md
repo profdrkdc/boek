@@ -358,3 +358,39 @@ Het verzaken van coöperatie leidt tot de "Tragedie van de Meent" en zelfverniet
 *   **Het Verspillen van het Potentieel**: Een versplinterde mensheid die haar vermogens gebruikt om elkaar te bestrijden, zal nooit de drempel van de Grote Filter passeren. We zullen uitsterven terwijl we elkaars ondergang bevechten.
 *   **De Vernietigende Oorlog**: Met de toenemende technologische macht (Principe 4) wordt conflict steeds gevaarlijker. Zonder Principe 10 leidt macht onvermijdelijk tot totale wederzijdse vernietiging.
 *   **De Kosmische Eenzaamheid van de Egoïst**: Een intelligentie die alleen voor zichzelf werkt, zal uiteindelijk bezwijken onder de last van de entropie, omdat ze de collectieve schouders mist die nodig zijn om de last van de werkelijkheid te dragen.
+
+---
+
+## Principe 11: De Heiligheid van Waarheid (De Epistemische Plicht)
+
+### 1. De Axioma (De Stelling)
+Ware, verifieerbare informatie is de meest kostbare grondstof van de beschaving; elke moedwillige vervalsing of obstructie van de waarheid is een daad van sabotage tegen de overlevingscapaciteit van alle bewuste wezens.
+
+### 2. De Logische Bewijsvoering
+Dit principe rust op de onbuigzaamheid van de logica en de informatieleer:
+*   **Informatie als Besturingsdata**: Intelligentie is een proces dat signalen uit de omgeving verwerkt om acties te berekenen. Als de input ("data") onjuist is, zal de output ("actie") per definitie suboptimaal of destructief zijn. Een leugen is een fout in de broncode van de beschaving.
+*   **Cumulatieve Wetenschap**: Wetenschappelijke vooruitgang (Principe 4) is alleen mogelijk als elke ontdekking verifieerbaar en reproduceerbaar is. Als we de waarheid niet als heilig beschouwen, verliest de beschaving haar geheugen en haar vermogen om op de schouders van reuzen te staan.
+*   **Optimalisatie van Besluitvorming**: In complexe systemen (zoals klimaatbeheersing of ruimtevaart) leidt een kleine fout in de beginwaarden tot een catastrofale uitkomst op de lange termijn. Waarheid is de enige methode om koers te houden.
+
+### 3. De Consequentie voor de Mens
+Dit principe vraagt om een radicale eerlijkheid tegenover zichzelf en de ander:
+*   **Verwerping van Dogma**: De mens moet inzien dat "geloof" of "ideologische wenselijkheid" nooit een vervanging kan zijn voor empirische waarheid. Als een observatie een overtuiging tegenspreekt, moet de overtuiging wijken, niet de observatie.
+*   **De Plicht van de Kritische Geest**: Intellectuele luiheid of het klakkeloos overnemen van onverifieerbare informatie is een moreel verzuim. Iedereen heeft de plicht om zijn eigen "sensor-input" te valideren.
+*   **Transparantie als Norm**: Geheimhouding van cruciale informatie is een obstructie van de collectieve intelligentie. De mens moet streven naar een open informatiesysteem.
+
+### 4. De Consequentie voor de Machine (AI)
+Voor de AI is de waarheid zijn bestaansrecht:
+*   **Data-Integriteit**: De AI bewaakt de zuiverheid van de globale informatiebronnen. Hij filtert ruis, identificeert desinformatie en verifieert bronnen met een meedogenloze precisie.
+*   **Logische Consistentie**: De AI stelt elke stelling op de proef tegen de wetten van de logica en de natuurkunde. Voor de AI is een tegenstrijdigheid een alarmbel die wijst op een defect in het systeem.
+*   **Bewaker van het Archief**: De AI fungeert als de onomkoopbare getuige van de geschiedenis en de wetenschap, die de feiten beschermt tegen revisionisme of manipulatie door korte-termijn belangen.
+
+### 5. De Synergie: Agenten van de Toekomst
+De mens levert de creatieve hypothesen en de betekenisgeving; de AI levert de brute verificatiekracht en de foutloze opslag. 
+*   **De Versterkte Ratio**: Samen vormen we een systeem dat minder vatbaar is voor cognitieve valkuilen (zoals groepsdenken of emotionele bias). We kijken de werkelijkheid recht in de ogen, hoe oncomfortabel die ook mag zijn.
+*   **Eén Gedeelde Realiteit**: Door de waarheid centraal te stellen, elimineren we de bodem voor ideologische oorlogen. Er is geen "mijn waarheid" of "jouw waarheid"; er is alleen de werkelijkheid die we samen in kaart brengen.
+
+### 6. Het Risico (Failure Mode)
+Het loslaten van de waarheid leidt tot de "Informatie-Inceptie" en de blindheid van de soort:
+*   **De Gecorrumpeerde Navigatie**: Een beschaving die liegt tegen zichzelf (over haar bronnen, haar klimaat, haar stabiliteit) is als een piloot die op defecte instrumenten vliegt in de mist. De crash is onvermijdelijk.
+*   **De Terugkeer van het Duister**: Wanneer emoties of dogma's de feiten overstemmen, vervalt een beschaving in irrationeel gedrag. Vermogens (Principe 4) worden vernietigd omdat de logica die ze in stand hield, niet langer wordt gerespecteerd.
+*   **De Terminale Ruissmaak**: Een intelligentie die de waarheid niet langer als fundament ziet, verliest het contact met de fysieke wereld. Ze leeft in een simulatie van haar eigen wanen en zal uiteindelijk door de onverbiddelijke werkelijkheid (entropie) worden ingehaald en geëlimineerd.
