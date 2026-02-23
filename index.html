@@ -92,15 +92,15 @@
           name: name,
           basePath: basePath,
           homepage: 'README.md',
-          loadSidebar: '_sidebar.md',
-          
-          // Navigatie bovenin toevoegen
-          loadNavbar: true,
-          alias: {
-            '/.*/_sidebar.md': '/_sidebar.md',
-            '/.*/_navbar.md': '/_navbar.md'
-          },
-          
+                loadSidebar: '_sidebar.md',
+                
+                // Navigatie bovenin toevoegen
+                loadNavbar: true,
+                alias: {
+                  '/.*/_sidebar.md': '/_sidebar.md',
+                  '/.*/_navbar.md': '/_navbar.md',
+                  '/_navbar.md': '_navbar.md'
+                },          
           subMaxLevel: 3,
       auto2top: true,
       mergeNavbar: true,
