@@ -1,5 +1,6 @@
 * Hoofdstuk 1
   * [Onze Werkelijkheid](Hoofdstuk-1/01_Onze-Werkelijkheid.md)
+  * [Spontaniteit van het Leven](Hoofdstuk-1/02_Spontaniteit-van-Leven.md)
 
 * Hoofdstuk 2
   * [De Gedeelde Grond van Ethiek](Hoofdstuk-2/01_De-Gedeelde-Grond-van-Ethiek.md)
