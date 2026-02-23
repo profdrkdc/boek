@@ -1,1 +1,1 @@
-https://kareltestspecial.github.io/boek/
+https://profdrkdc.github.io/boek/
