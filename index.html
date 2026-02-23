@@ -88,24 +88,40 @@
       name = 'Ethisch Fundament voor Synthetische Intelligentie (AI)';
     }
 
-        window.$docsify = {
-          name: name,
-          basePath: basePath,
-          homepage: 'README.md',
-                loadSidebar: '_sidebar.md',
-                
-                // Navigatie bovenin toevoegen
-                loadNavbar: true,
-                alias: {
-                  '/.*/_sidebar.md': '/_sidebar.md',
-                  '/.*/_navbar.md': '/_navbar.md',
-                  '/_navbar.md': '_navbar.md'
-                },          
-          subMaxLevel: 3,
-      auto2top: true,
-      mergeNavbar: true,
-    }
-  </script>
+            window.$docsify = {
+              name: name,
+              basePath: basePath,
+              homepage: 'README.md',
+              loadSidebar: '_sidebar.md',
+              
+              // Navigatie bovenin inschakelen
+              loadNavbar: true,
+              
+              // Aliassen vertellen Docsify waar de bestanden echt staan, 
+              // ongeacht in welke submap we zitten.
+              alias: {
+                '/.*/_sidebar.md': '/_sidebar.md',
+                '/.*/_navbar.md': '/_navbar.md'
+              },
+              
+              subMaxLevel: 3,
+              auto2top: true,
+              mergeNavbar: true,
+            }
+          </script>
+          <style>
+            /* Zorg dat de navbar altijd zichtbaar is en bovenop ligt */
+            .app-nav {
+              position: fixed;
+              margin: 0;
+              padding: 10px 50px 10px 0;
+              background-color: rgba(253, 253, 253, 0.95);
+              z-index: 100;
+              width: 100%;
+              text-align: right;
+              border-bottom: 1px solid #eee;
+            }
+          </style>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>

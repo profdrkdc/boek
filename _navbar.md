@@ -1,3 +1,3 @@
-* [📘 Origineel](#/README.md?v=origineel)
-* [📗 Eenvoudig](#/README.md?v=eenvoudig)
-* [🤖 AI Fundament](#/README.md?v=ai)
+* [📘 Origineel](/?v=origineel)
+* [📗 Eenvoudig](/?v=eenvoudig)
+* [🤖 AI](/?v=ai)
