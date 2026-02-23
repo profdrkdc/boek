@@ -73,27 +73,36 @@
   <div id="app">Het boek wordt geladen...</div>
   
   <script>
-    window.$docsify = {
-      name: 'De Competente Toekomst',
-      
-      basePath: 'DeCompetenteToekomst_Manuscript/',
+    // Bepaal welke versie we laden op basis van de URL (?v=eenvoudig, ?v=ai, of standaard origineel)
+    const urlParams = new URLSearchParams(window.location.search);
+    const version = urlParams.get('v') || 'origineel';
+    
+    let basePath = 'Het-Boek-Origineel/';
+    let name = 'De Competente Toekomst (Origineel)';
 
-      homepage: 'README.md',
-      
-      // Navigatie inschakelen
-      loadSidebar: '_sidebar.md',
-      // HIER IS DE TRUC: Alias
-      // Dit vertelt Docsify: "Als je ergens zoekt naar _sidebar.md (bijv in een hoofdstuk),
-      // pak dan altijd de _sidebar.md uit de root."
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      },
-      
-      subMaxLevel: 3,
-      // Scrollt automatisch naar boven bij nieuwe pagina
+    if (version === 'eenvoudig') {
+      basePath = 'Het-Boek-Eenvoudig/';
+      name = 'De Competente Toekomst (Eenvoudig)';
+    } else if (version === 'ai') {
+      basePath = 'Het-Boek-AI/';
+      name = 'Ethisch Fundament voor Synthetische Intelligentie (AI)';
+    }
+
+        window.$docsify = {
+          name: name,
+          basePath: basePath,
+          homepage: 'README.md',
+          loadSidebar: '_sidebar.md',
+          
+          // Navigatie bovenin toevoegen
+          loadNavbar: true,
+          alias: {
+            '/.*/_sidebar.md': '/_sidebar.md',
+            '/.*/_navbar.md': '/_navbar.md'
+          },
+          
+          subMaxLevel: 3,
       auto2top: true,
-      
-      // Verbergt de sidebar op hele kleine schermpjes tot je op het knopje drukt
       mergeNavbar: true,
     }
   </script>
