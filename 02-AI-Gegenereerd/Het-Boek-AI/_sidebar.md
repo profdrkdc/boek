@@ -1,17 +1,3 @@
-<div class="version-switcher">
-  <div class="row">
-    <a href="?t=manueel">Manueel</a>
-    <a href="?t=ai">AI-Gegenereerd</a>
-  </div>
-  <div class="row">
-    <a href="?v=eenvoudig">Eenvoudig</a>
-    <a href="?v=ai">AI</a>
-    <a href="?v=origineel">Origineel</a>
-  </div>
-</div>
-
----
-
 * Hoofdstuk 1
   * [Onze Werkelijkheid](Hoofdstuk-1/01_Onze-Werkelijkheid.md)
 

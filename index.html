@@ -52,33 +52,34 @@
       color: #666;
       font-style: italic;
     }
-    /* Extra styling voor de versie-switcher in de sidebar */
-    .sidebar .version-switcher {
+    
+    /* Dynamische Switcher Styling */
+    .version-switcher {
       display: flex;
       flex-direction: column;
-      padding: 0 15px 5px 15px;
-      margin-top: -10px;
-      margin-bottom: 10px;
+      padding: 0 15px 15px 15px;
+      margin-bottom: 15px;
       border-bottom: 1px solid #eee;
     }
-    .sidebar .version-switcher .row {
+    .version-switcher .row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
-    .sidebar .version-switcher a {
+    .version-switcher a {
       font-size: 11px;
-      color: #999;
+      color: #aaa;
       text-decoration: none !important;
       border-bottom: none !important;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: color 0.2s;
     }
-    .sidebar .version-switcher a.active {
+    .version-switcher a.active {
       color: #2c3e50;
       font-weight: bold;
     }
-    .sidebar .version-switcher a:hover {
+    .version-switcher a:hover {
       color: #2c3e50;
     }
   </style>
@@ -92,7 +93,6 @@
     const version = urlParams.get('v') || 'origineel';
     
     let trackPath = track === 'ai' ? '02-AI-Gegenereerd' : '01-Manueel-Manuscript';
-    
     let versionPath = 'Het-Boek-Origineel/';
     if (version === 'eenvoudig') versionPath = 'Het-Boek-Eenvoudig/';
     if (version === 'ai') versionPath = 'Het-Boek-AI/';
@@ -104,41 +104,42 @@
       loadSidebar: '_sidebar.md?v=' + new Date().getTime(),
       subMaxLevel: 3,
       auto2top: true,
-      mergeNavbar: true,
+      
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(html) {
+            // We injecteren de switcher bovenaan de content van de sidebar
+            // Maar Docsify heeft een betere plek: de sidebar header
+          });
+
+          hook.doneEach(function() {
+            // Injecteer de switcher in de sidebar
+            const sidebarNav = document.querySelector('.sidebar-nav');
+            if (sidebarNav && !document.querySelector('.version-switcher')) {
+              const switcher = document.createElement('div');
+              switcher.className = 'version-switcher';
+              
+              const t = track;
+              const v = version;
+
+              switcher.innerHTML = `
+                <div class="row">
+                  <a href="?t=manueel&v=${v}" class="${t === 'manueel' ? 'active' : ''}">Manueel</a>
+                  <a href="?t=ai&v=${v}" class="${t === 'ai' ? 'active' : ''}">AI-Gegenereerd</a>
+                </div>
+                <div class="row">
+                  <a href="?t=${t}&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
+                  <a href="?t=${t}&v=ai" class="${v === 'ai' ? 'active' : ''}">AI</a>
+                  <a href="?t=${t}&v=origineel" class="${v === 'origineel' ? 'active' : ''}">Origineel</a>
+                </div>
+              `;
+              sidebarNav.insertBefore(switcher, sidebarNav.firstChild);
+            }
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script>
-    // Functie om de actieve links in de versie-switcher te markeren
-    function markActiveLinks() {
-      const params = new URLSearchParams(window.location.search);
-      const track = params.get('t') || 'manueel';
-      const version = params.get('v') || 'origineel';
-
-      document.querySelectorAll('.version-switcher a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href.includes(`t=${track}`) || (href.startsWith('?v=') && href.includes(`v=${version}`))) {
-          // We moeten specifiek zijn: als de link een traject bevat, check traject. Als het alleen een versie bevat, check versie.
-          if (href.includes('t=') && href.includes(`t=${track}`)) {
-            link.classList.add('active');
-          } else if (!href.includes('t=') && href.includes(`v=${version}`)) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-
-    // Docsify hook om de actieve links te markeren nadat de sidebar is geladen
-    window.$docsify.plugins = [
-      function(hook) {
-        hook.doneEach(function() {
-          markActiveLinks();
-        });
-      }
-    ];
-  </script>
+</body>
 </html>
