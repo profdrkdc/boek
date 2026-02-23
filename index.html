@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>De verantwoordelijkheid tegenover de toekomst</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="De Competente Toekomst">
+  <meta name="description" content="De verantwoordelijkheid tegenover de toekomst">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css">
@@ -55,17 +55,28 @@
     /* Extra styling voor de versie-switcher in de sidebar */
     .sidebar .version-switcher {
       display: flex;
-      justify-content: space-between;
-      padding: 0 15px 5px 15px; /* Minder padding onderaan */
+      flex-direction: column;
+      padding: 0 15px 5px 15px;
       margin-top: -10px;
-      margin-bottom: 10px; /* Minder marge onderaan de lijn */
+      margin-bottom: 10px;
       border-bottom: 1px solid #eee;
     }
+    .sidebar .version-switcher .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
     .sidebar .version-switcher a {
-      font-size: 13px;
+      font-size: 11px;
       color: #999;
-      text-decoration: none !important; /* Geen onderlijning */
+      text-decoration: none !important;
       border-bottom: none !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .sidebar .version-switcher a.active {
+      color: #2c3e50;
+      font-weight: bold;
     }
     .sidebar .version-switcher a:hover {
       color: #2c3e50;
@@ -77,22 +88,20 @@
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
+    const track = urlParams.get('t') || 'manueel';
     const version = urlParams.get('v') || 'origineel';
     
-    let basePath = 'Het-Boek-Origineel/';
-    let name = 'De verantwoordelijkheid tegenover de toekomst';
-
-    if (version === 'eenvoudig') {
-      basePath = 'Het-Boek-Eenvoudig/';
-    } else if (version === 'ai') {
-      basePath = 'Het-Boek-AI/';
-    }
+    let trackPath = track === 'ai' ? '02-AI-Gegenereerd' : '01-Manueel-Manuscript';
+    
+    let versionPath = 'Het-Boek-Origineel/';
+    if (version === 'eenvoudig') versionPath = 'Het-Boek-Eenvoudig/';
+    if (version === 'ai') versionPath = 'Het-Boek-AI/';
 
     window.$docsify = {
-      name: name,
-      basePath: basePath,
+      name: (track === 'ai' ? '[AI] ' : '[M] ') + 'De Toekomst',
+      basePath: trackPath + '/' + versionPath,
       homepage: 'README.md',
-      loadSidebar: '_sidebar.md?v=' + new Date().getTime(), // Dwingt verversing van de sidebar af
+      loadSidebar: '_sidebar.md?v=' + new Date().getTime(),
       subMaxLevel: 3,
       auto2top: true,
       mergeNavbar: true,

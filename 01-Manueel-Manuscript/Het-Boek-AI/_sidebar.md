@@ -1,7 +1,13 @@
 <div class="version-switcher">
-  <a href="?v=eenvoudig">Eenvoudig</a>
-  <a href="?v=ai">AI</a>
-  <a href="?v=origineel">Origineel</a>
+  <div class="row">
+    <a href="?t=manueel">Manueel</a>
+    <a href="?t=ai">AI-Gegenereerd</a>
+  </div>
+  <div class="row">
+    <a href="?v=eenvoudig">Eenvoudig</a>
+    <a href="?v=ai">AI</a>
+    <a href="?v=origineel">Origineel</a>
+  </div>
 </div>
 
 ---
