@@ -10,23 +10,35 @@ interface Message {
 }
 
 function App() {
+  const [version, setVersion] = useState('nl-original')
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0)
   const [showChat, setShowChat] = useState(true)
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'architect', text: 'Hallo. Ik ben de Architect. Ik heb het manuscript gelezen. Als je vragen hebt over deze tekst, of hoe je dit kunt toepassen, stel ze gerust.' }
-  ])
+  const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [systemPrompt, setSystemPrompt] = useState('')
+  const [systemPromptEn, setSystemPromptEn] = useState('')
   
   const chatEndRef = useRef<HTMLDivElement>(null)
-  const currentChapter = bookData.chapters[currentChapterIndex]
+  const currentBook = (bookData as any)[version]
+  const currentChapter = currentBook.chapters[currentChapterIndex] || { title: 'Geen inhoud', content: 'Deze versie heeft nog geen inhoud.' }
 
   useEffect(() => {
     fetch('/system_prompt.md')
       .then(res => res.text())
       .then(setSystemPrompt)
+    fetch('/system_prompt_en.md')
+      .then(res => res.text())
+      .then(setSystemPromptEn)
   }, [])
+
+  useEffect(() => {
+    const greeting = version.startsWith('en') 
+      ? 'Hello. I am the Architect. I have read the manuscript. If you have any questions about this text, or how you can apply it, feel free to ask.'
+      : 'Hallo. Ik ben de Architect. Ik heb het manuscript gelezen. Als je vragen hebt over deze tekst, of hoe je dit kunt toepassen, stel ze gerust.';
+    
+    setMessages([{ role: 'architect', text: greeting }]);
+  }, [version])
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -40,7 +52,8 @@ function App() {
     setInputValue('')
     setIsLoading(true)
 
-    const response = await askArchitect(userMessage, currentChapter.content, systemPrompt)
+    const currentSystemPrompt = version.startsWith('en') ? systemPromptEn : systemPrompt
+    const response = await askArchitect(userMessage, currentChapter.content, currentSystemPrompt)
     
     setMessages(prev => [...prev, { role: 'architect', text: response }])
     setIsLoading(false)
@@ -56,8 +69,27 @@ function App() {
           </div>
           <h1 className="font-bold text-lg tracking-tight">De Architect</h1>
         </div>
+        
+        {/* Version Selector */}
+        <div className="p-4 border-b border-slate-800 bg-slate-900/50">
+          <div className="text-[10px] uppercase tracking-widest text-slate-500 mb-2 font-bold px-1">Versie / Taal</div>
+          <select 
+            value={version} 
+            onChange={(e) => {
+              setVersion(e.target.value);
+              setCurrentChapterIndex(0);
+            }}
+            className="w-full bg-slate-800 text-sm border border-slate-700 rounded-xl p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-600/50 transition-all appearance-none cursor-pointer"
+          >
+            <option value="nl-original">Nederlands (Origineel)</option>
+            <option value="nl-simple">Nederlands (Eenvoudig)</option>
+            <option value="nl-ai">Nederlands (AI)</option>
+            <option value="en-original">English (Original)</option>
+          </select>
+        </div>
+
         <div className="flex-1 overflow-y-auto p-3 space-y-1">
-          {bookData.chapters.map((chap, idx) => (
+          {currentBook.chapters.map((chap: any, idx: number) => (
             <button
               key={chap.id}
               onClick={() => setCurrentChapterIndex(idx)}
@@ -67,10 +99,17 @@ function App() {
                   : 'hover:bg-slate-800/50 text-slate-400 border border-transparent'
               }`}
             >
-              <div className="text-[10px] uppercase tracking-widest opacity-50 mb-1 font-bold">Hoofdstuk {idx + 1}</div>
+              <div className="text-[10px] uppercase tracking-widest opacity-50 mb-1 font-bold">
+                {version.startsWith('en') ? 'Chapter' : 'Hoofdstuk'} {idx + 1}
+              </div>
               <div className="text-sm font-semibold truncate">{chap.title}</div>
             </button>
           ))}
+          {currentBook.chapters.length === 0 && (
+            <div className="p-4 text-sm text-slate-500 italic text-center">
+              {version.startsWith('en') ? 'No chapters found for this version.' : 'Geen hoofdstukken gevonden voor deze versie.'}
+            </div>
+          )}
         </div>
       </div>
 
@@ -87,7 +126,7 @@ function App() {
                 <ChevronLeft size={20} />
               </button>
               <button 
-                disabled={currentChapterIndex === bookData.chapters.length - 1}
+                disabled={currentChapterIndex === currentBook.chapters.length - 1 || currentBook.chapters.length === 0}
                 onClick={() => setCurrentChapterIndex(prev => prev + 1)}
                 className="p-2 hover:bg-slate-800 rounded-lg disabled:opacity-20 transition-colors"
               >
@@ -105,7 +144,7 @@ function App() {
             }`}
           >
             <MessageSquare size={14} />
-            <span>{showChat ? 'Sluit Architect' : 'Open Architect'}</span>
+            <span>{showChat ? (version.startsWith('en') ? 'Close Architect' : 'Sluit Architect') : (version.startsWith('en') ? 'Open Architect' : 'Open Architect')}</span>
           </button>
         </header>
 
@@ -129,7 +168,7 @@ function App() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-slate-900 rounded-full"></div>
               </div>
               <div>
-                <div className="font-bold text-sm tracking-tight">De Architect</div>
+                <div className="font-bold text-sm tracking-tight">{version.startsWith('en') ? 'The Architect' : 'De Architect'}</div>
                 <div className="text-[10px] text-slate-500 uppercase tracking-widest font-black">Expert Systeem v3.0</div>
               </div>
             </div>
@@ -166,7 +205,7 @@ function App() {
                 type="text" 
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Stel een vraag over dit hoofdstuk..."
+                placeholder={version.startsWith('en') ? "Ask a question about this chapter..." : "Stel een vraag over dit hoofdstuk..."}
                 className="w-full bg-slate-850 border border-slate-700/50 rounded-2xl py-4 pl-5 pr-14 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600/50 transition-all bg-slate-800/50 group-hover:bg-slate-800"
               />
               <button 
@@ -178,7 +217,7 @@ function App() {
               </button>
             </form>
             <div className="mt-4 text-[9px] text-center text-slate-600 uppercase tracking-[0.2em] font-bold">
-              Cognitieve Interface &bull; De Competente Toekomst
+              {version.startsWith('en') ? 'Cognitive Interface • The Competent Future' : 'Cognitieve Interface • De Competente Toekomst'}
             </div>
           </div>
         </div>
