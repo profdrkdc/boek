@@ -100,15 +100,13 @@
       siteName = '[Claude] De Erfenis';
     } else if (track === 'ai') {
       basePath = '02-AI-Gegenereerd/';
-      if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
-      else if (version === 'en') basePath += 'The-Book-EN/';
+      if (version === 'en') basePath += 'The-Book-EN/';
       else basePath += 'Het-Boek-AI/'; // Default to AI if version is ai or origineel (prevent breaking URLs)
       siteName = '[AI] De Toekomst';
     } else {
       // Default / track = manueel
       basePath = '01-Manueel-Manuscript/';
-      if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
-      else if (version === 'en') basePath += 'The-Book-EN/';
+      if (version === 'en') basePath += 'The-Book-EN/';
       else basePath += 'Het-Boek-Origineel/'; // Default to Origineel if manueel
       siteName = '[M] De Toekomst';
     }
@@ -142,13 +140,11 @@
               } else if (t === 'ai') {
                 subRow = `
                   <a href="?t=ai&v=ai" class="${v === 'ai' || v === 'origineel' ? 'active' : ''}">AI</a>
-                  <a href="?t=ai&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
                   <a href="?t=ai&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
               } else {
                 subRow = `
                   <a href="?t=manueel&v=origineel" class="${v === 'origineel' || v === 'ai' ? 'active' : ''}">Origineel</a>
-                  <a href="?t=manueel&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
                   <a href="?t=manueel&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
               }
