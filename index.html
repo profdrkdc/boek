@@ -98,11 +98,11 @@
       const lang = version === 'en' ? 'EN' : 'NL';
       basePath = '03-Claude-Versie/' + lang + '/';
       siteName = '[Claude] De Erfenis';
-    } else if (track === 'ai') {
-      basePath = '02-AI-Gegenereerd/';
+    } else if (track === 'gemini') {
+      basePath = '02-Gemini-Versie/';
       if (version === 'en') basePath += 'The-Book-EN/';
-      else basePath += 'Het-Boek-AI/'; // Default to AI if version is ai or origineel (prevent breaking URLs)
-      siteName = '[AI] De Toekomst';
+      else basePath += 'Het-Boek-Gemini/'; // Default to Gemini if version is gemini or origineel (prevent breaking URLs)
+      siteName = '[Gemini] De Toekomst';
     } else {
       // Default / track = manueel
       basePath = '01-Manueel-Manuscript/';
@@ -137,10 +137,10 @@
                   <a href="?t=claude&v=nl" class="${v === 'nl' || v === 'origineel' ? 'active' : ''}">NL</a>
                   <a href="?t=claude&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
-              } else if (t === 'ai') {
+              } else if (t === 'gemini') {
                 subRow = `
-                  <a href="?t=ai&v=ai" class="${v === 'ai' || v === 'origineel' ? 'active' : ''}">AI</a>
-                  <a href="?t=ai&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
+                  <a href="?t=gemini&v=gemini" class="${v === 'gemini' || v === 'origineel' ? 'active' : ''}">Gemini</a>
+                  <a href="?t=gemini&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
               } else {
                 subRow = `
@@ -152,7 +152,7 @@
               switcher.innerHTML = `
                 <div class="row">
                   <a href="?t=manueel&v=${t === 'manueel' ? v : 'origineel'}" class="${t === 'manueel' ? 'active' : ''}">Manueel</a>
-                  <a href="?t=ai&v=${t === 'ai' ? v : 'ai'}" class="${t === 'ai' ? 'active' : ''}">AI</a>
+                  <a href="?t=gemini&v=${t === 'gemini' ? v : 'gemini'}" class="${t === 'gemini' ? 'active' : ''}">Gemini</a>
                   <a href="?t=claude&v=${t === 'claude' ? v : 'nl'}" class="${t === 'claude' ? 'active' : ''}">Claude</a>
                 </div>
                 <div class="row">${subRow}</div>
