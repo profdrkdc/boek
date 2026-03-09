@@ -180,7 +180,6 @@ def build_ncx(book: dict, uid: str, chapter_files: list) -> str:
         for i, (label, f) in enumerate(zip([c[0] for c in book["chapters"]], chapter_files))
     )
     return f"""<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
   <head>
     <meta name="dtb:uid" content="{uid}"/>
