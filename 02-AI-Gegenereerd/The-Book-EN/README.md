@@ -1,5 +1,5 @@
-# The Book (English - AI Generated)
+# The Book (English)
 
-Welcome to the English translation of the AI generated manuscript.
+Welcome to the English translation of the manual manuscript.
 
 Content is currently being translated and will be added soon.
