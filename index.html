@@ -91,47 +91,68 @@
     const urlParams = new URLSearchParams(window.location.search);
     const track = urlParams.get('t') || 'manueel';
     const version = urlParams.get('v') || 'origineel';
-    
-    let trackPath = track === 'ai' ? '02-AI-Gegenereerd' : '01-Manueel-Manuscript';
-    let versionPath = 'Het-Boek-Origineel/';
-    if (version === 'eenvoudig') versionPath = 'Het-Boek-Eenvoudig/';
-    if (version === 'ai') versionPath = 'Het-Boek-AI/';
+
+    let basePath;
+    let siteName;
+    if (track === 'claude') {
+      const lang = version === 'en' ? 'EN' : 'NL';
+      basePath = '03-Claude-Versie/' + lang + '/';
+      siteName = '[Claude] De Erfenis';
+    } else if (track === 'ai') {
+      basePath = '02-AI-Gegenereerd/';
+      if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
+      else if (version === 'ai') basePath += 'Het-Boek-AI/';
+      else basePath += 'Het-Boek-Origineel/';
+      siteName = '[AI] De Toekomst';
+    } else {
+      basePath = '01-Manueel-Manuscript/';
+      if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
+      else if (version === 'ai') basePath += 'Het-Boek-AI/';
+      else basePath += 'Het-Boek-Origineel/';
+      siteName = '[M] De Toekomst';
+    }
 
     window.$docsify = {
-      name: (track === 'ai' ? '[AI] ' : '[M] ') + 'De Toekomst',
-      basePath: trackPath + '/' + versionPath,
+      name: siteName,
+      basePath: basePath,
       homepage: 'README.md',
       loadSidebar: '_sidebar.md?v=' + new Date().getTime(),
       subMaxLevel: 3,
       auto2top: true,
-      
+
       plugins: [
         function(hook, vm) {
-          hook.beforeEach(function(html) {
-            // We injecteren de switcher bovenaan de content van de sidebar
-            // Maar Docsify heeft een betere plek: de sidebar header
-          });
-
           hook.doneEach(function() {
-            // Injecteer de switcher in de sidebar
             const sidebarNav = document.querySelector('.sidebar-nav');
             if (sidebarNav && !document.querySelector('.version-switcher')) {
               const switcher = document.createElement('div');
               switcher.className = 'version-switcher';
-              
+
               const t = track;
               const v = version;
 
-              switcher.innerHTML = `
-                <div class="row">
-                  <a href="?t=manueel&v=${v}" class="${t === 'manueel' ? 'active' : ''}">Manueel</a>
-                  <a href="?t=ai&v=${v}" class="${t === 'ai' ? 'active' : ''}">AI-Gegenereerd</a>
-                </div>
-                <div class="row">
+              // Tweede rij: context-afhankelijk op basis van geselecteerde track
+              let subRow;
+              if (t === 'claude') {
+                subRow = `
+                  <a href="?t=claude&v=nl" class="${v === 'nl' || v === 'origineel' ? 'active' : ''}">NL</a>
+                  <a href="?t=claude&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
+                `;
+              } else {
+                subRow = `
                   <a href="?t=${t}&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
                   <a href="?t=${t}&v=ai" class="${v === 'ai' ? 'active' : ''}">AI</a>
                   <a href="?t=${t}&v=origineel" class="${v === 'origineel' ? 'active' : ''}">Origineel</a>
+                `;
+              }
+
+              switcher.innerHTML = `
+                <div class="row">
+                  <a href="?t=manueel&v=${t === 'manueel' ? v : 'origineel'}" class="${t === 'manueel' ? 'active' : ''}">Manueel</a>
+                  <a href="?t=ai&v=${t === 'ai' ? v : 'origineel'}" class="${t === 'ai' ? 'active' : ''}">AI</a>
+                  <a href="?t=claude&v=${t === 'claude' ? v : 'nl'}" class="${t === 'claude' ? 'active' : ''}">Claude</a>
                 </div>
+                <div class="row">${subRow}</div>
               `;
               sidebarNav.insertBefore(switcher, sidebarNav.firstChild);
             }
