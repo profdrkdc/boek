@@ -51,7 +51,7 @@ Dit is geen pessimisme, maar een technische vaststelling. Het systeem hapert. De
 Maar deze oude denkkaders hebben hun houdbaarheidsdatum bereikt. Ze schieten tekort omdat ze vaak gebaseerd zijn op de machteloosheid als uitgangspunt. Hoe menselijk deze oplossingen ook zijn, in wezen zijn ze een doodlopende weg. De suggestie dat er ergens een verborgen script ligt, een morele reden die we over het hoofd zien, een autoriteit die ons leven bepaalt... 
 Als we eerlijk naar de realiteit kijken —naar de kosmos en de evolutie— dan zijn er geen verborgen scripts. De idee van (een) hogere macht(en), van voorbestemdheid, van een vastliggend script leiden tot passieve berusting (‘Het moet zo zijn’), tot verlammende wanhoop (‘Het heeft geen zin’), of tot dogmatische onverzetlijkheid. Deze reacties lossen niets op.
 
-Een heldere, competente geest stelt een andere vraag. De vraag van de architect, de arts, de wetenschapper. Niet ‘Waarom is de machine kapot?’, maar ‘*Hoe* werkt het defect en hoe herstellen we het?’. Of, nog directer:
+Een heldere geest stelt een andere vraag. De vraag van de bouwer, de architect, de arts, de zorgverlener. Niet ‘Waarom is de machine kapot?’, maar ‘*Hoe* werkt het defect en hoe herstellen we het?’. Of, nog directer:
 
 **“Wat doen we eraan?”**
 
