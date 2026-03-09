@@ -1,5 +1,3 @@
-# The Book (English)
+# Responsibility Towards the Future
 
-Welcome to the English translation of the manual manuscript.
-
-Content is currently being translated and will be added soon.
+> A philosophical exploration of human potential, ethics, and the building blocks for a functional society.
