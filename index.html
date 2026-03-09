@@ -101,14 +101,15 @@
     } else if (track === 'ai') {
       basePath = '02-AI-Gegenereerd/';
       if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
-      else if (version === 'ai') basePath += 'Het-Boek-AI/';
-      else basePath += 'Het-Boek-Origineel/';
+      else if (version === 'en') basePath += 'The-Book-EN/';
+      else basePath += 'Het-Boek-AI/'; // Default to AI if version is ai or origineel (prevent breaking URLs)
       siteName = '[AI] De Toekomst';
     } else {
+      // Default / track = manueel
       basePath = '01-Manueel-Manuscript/';
       if (version === 'eenvoudig') basePath += 'Het-Boek-Eenvoudig/';
-      else if (version === 'ai') basePath += 'Het-Boek-AI/';
-      else basePath += 'Het-Boek-Origineel/';
+      else if (version === 'en') basePath += 'The-Book-EN/';
+      else basePath += 'Het-Boek-Origineel/'; // Default to Origineel if manueel
       siteName = '[M] De Toekomst';
     }
 
@@ -138,18 +139,24 @@
                   <a href="?t=claude&v=nl" class="${v === 'nl' || v === 'origineel' ? 'active' : ''}">NL</a>
                   <a href="?t=claude&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
+              } else if (t === 'ai') {
+                subRow = `
+                  <a href="?t=ai&v=ai" class="${v === 'ai' || v === 'origineel' ? 'active' : ''}">AI</a>
+                  <a href="?t=ai&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
+                  <a href="?t=ai&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
+                `;
               } else {
                 subRow = `
-                  <a href="?t=${t}&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
-                  <a href="?t=${t}&v=ai" class="${v === 'ai' ? 'active' : ''}">AI</a>
-                  <a href="?t=${t}&v=origineel" class="${v === 'origineel' ? 'active' : ''}">Origineel</a>
+                  <a href="?t=manueel&v=origineel" class="${v === 'origineel' || v === 'ai' ? 'active' : ''}">Origineel</a>
+                  <a href="?t=manueel&v=eenvoudig" class="${v === 'eenvoudig' ? 'active' : ''}">Eenvoudig</a>
+                  <a href="?t=manueel&v=en" class="${v === 'en' ? 'active' : ''}">EN</a>
                 `;
               }
 
               switcher.innerHTML = `
                 <div class="row">
                   <a href="?t=manueel&v=${t === 'manueel' ? v : 'origineel'}" class="${t === 'manueel' ? 'active' : ''}">Manueel</a>
-                  <a href="?t=ai&v=${t === 'ai' ? v : 'origineel'}" class="${t === 'ai' ? 'active' : ''}">AI</a>
+                  <a href="?t=ai&v=${t === 'ai' ? v : 'ai'}" class="${t === 'ai' ? 'active' : ''}">AI</a>
                   <a href="?t=claude&v=${t === 'claude' ? v : 'nl'}" class="${t === 'claude' ? 'active' : ''}">Claude</a>
                 </div>
                 <div class="row">${subRow}</div>
