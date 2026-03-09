@@ -16,13 +16,13 @@ Het plaatst ons in het heldere licht van de realiteit: de wereld, het leven is g
 
 Ziekte is een biochemische puzzel die wij kunnen oplossen. Een aardbeving is een geologisch feit waar wij ons tegen kunnen wapenen. Dat geeft ons een verantwoordelijkheid die wij niet zomaar kunnen negeren. 
 
-Dit boek is geen zoektocht naar het ‘waarom’ van het verleden. Die vraag leidt ons af. Wij kijken naar het ‘hoe’ van de toekomst. Dit boek is een uitnodiging tot intellectuele emancipatie op de schaal van de gehele beschaving, het is een uitnodiging tot actie. De wereld is een systeem met bugs, en wij zijn de debuggers, de programmeurs. De architecten en de bouwers. Lijden is de output van een verouderd systeem; welzijn moet de output zijn van het nieuwe systeem.
+Dit boek is geen zoektocht naar het ‘waarom’ van het verleden. Die vraag leidt ons af. Wij kijken naar het ‘hoe’ van de toekomst. Dit boek is een uitnodiging tot intellectuele emancipatie op schaal van de gehele beschaving, het is een uitnodiging tot ondernemen. De wereld is een systeem met bugs, en wij zijn de debuggers, de programmeurs. De architecten en de bouwers. Lijden is het product van een verouderd systeem; welzijn moet het product zijn van het nieuwe systeem.
 
-Dit boek is een handleiding. Een blauwdruk. Geen gids om de wereld te *verdragen*, maar een strategie om haar, steen voor steen, systeem voor systeem, inzicht voor inzicht, te verbeteren. De evolutie begint niet met blind geloof. Ze begint met een scherpe, heldere visie op wat mogelijk is.
+Dit boek is een uitnodiging, niet om de wereld te *verdragen*, maar een strategie om haar, steen voor steen, systeem voor systeem, inzicht voor inzicht, te verbeteren. Deze evolutie begint niet met blind geloof. Ze begint met een scherpe, heldere visie op wat onze mogelijkheden en onze beperkingen zijn.
 
 Welkom in de werkplaats. Het echte werk kan beginnen.
 
-Laten we de wereld inspecteren. Niet als critici die klagen over de barsten in de muur, maar als ingenieurs die de structuur komen versterken. Het menselijk lijden is geen mysterie, het is een mechanisch probleem dat vraagt om een oplossing. En wij hebben de capaciteit om de twee motoren van vooruitgang te starten: de beheersing van de natuur en de veredeling van de menselijke geest.
+Laten we de wereld inspecteren. Niet als critici die klagen over de barsten in de muur, maar als ingenieurs die de innerlijke structuur komen versterken. Het menselijk lijden is geen mysterie, het is een mechanisch probleem dat vraagt om een oplossing. En wij hebben de capaciteit om de twee motoren van vooruitgang te starten: de beheersing van de natuur en de veredeling van de menselijke geest.
 
 Begin bij de natuur. We romantiseren de natuur veel te gemakkelijk en veel te vaak. Laten we niet wegkijken van haar gebreken, laten we focussen op het repareren ervan. Een virus is simpelweg code die we kunnen herschrijven of verwijderen, kanker is een biologische fout die vraagt om correctie. We hebben de wetenschap om het besturingssysteem van het leven te patchen, en onze medische technologie komt elke dag dichter bij die oplossing. Wij zijn de immuunrespons van de planeet.
 
