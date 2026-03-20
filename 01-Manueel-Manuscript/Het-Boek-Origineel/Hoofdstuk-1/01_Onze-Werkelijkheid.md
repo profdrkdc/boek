@@ -31,7 +31,7 @@ De grootste kans op verbetering ligt bij onszelf. Ons verstand stelt ons in staa
 
 De verbetering zit ook in onze dagelijkse systemen. Politiek hoeft geen strijd te zijn van de luidste  schreeuwers; het is een platform voor competente probleemoplossers. We kunnen leiders kiezen en systemen bouwen die gericht zijn op oplossingen in plaats van op conflicten.
 
-Uiteindelijk zullen degenen die bouwen aan oplossingen, altijd degenen zijn die overblijven, die meer succesvol zijn, die de toekomst zijn. Degenen die niet leren, die niet evolueren, die niet zich verder ontwikkelen, zullen verliezen, zullen zichzelf verliezen, zullen geen toekomst zijn.
+Uiteindelijk zullen degenen die bouwen aan oplossingen, altijd degenen zijn die overblijven, die meer succesvol zijn, die de toekomst zijn. Degenen die niet leren, die niet evolueren, die niet zich verder ontwikkelen, zullen verliezen, zullen zichzelf verliezen, zullen niet tot de toekomst behoren.
 
 Het rechtssysteem is aan herziening toe. We kunnen bureaucratie vervangen door helderheid en efficiëntie. We kunnen streven naar een systeem dat daadwerkelijk rechtvaardigheid dient, ontworpen om de waarheid te vinden en de samenleving te helen.
 
