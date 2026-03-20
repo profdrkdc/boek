@@ -64,6 +64,8 @@ We hebben de basis van het probleem blootgelegd. De diagnose is niet dat de were
 
 De conclusie van deze analyse is even eenvoudig als veeleisend. De verantwoordelijkheid ligt bij ons. Als er geen kant-en-klaar plan is, moeten wij er een ontwerpen. Als het systeem fouten bevat, is het onze taak om de vaardigheden te ontwikkelen om die fouten te herstellen.
 
+Het leven heeft geen zin tenzij wij er zelf zin aan geven. Het is een leeg canvas, en wij zijn de schilders. Wij bepalen wat er op het doek komt. Wij kiezen de kleuren, de vormen, de compositie. Wij bepalen of het een meesterwerk wordt of een chaos. Het is een enorme verantwoordelijkheid, maar het is ook een ongelooflijke kans. De kans om iets te creëren dat groter is dan onszelf, iets dat de tand des tijds zal doorstaan, iets dat de wereld zal veranderen.
+
 De eerste stap is gezet: de eerlijke erkenning van de staat waarin we ons bevinden, zonder opsmuk. Nu begint de volgende fase: het kritisch bekijken van de systemen die niet werken en het identificeren van de obstakels —in de wereld en in onszelf— die vooruitgang in de weg staan. De realiteit is in kaart gebracht. Laten we nu kijken wat er nodig is om haar te verbouwen. De wereld is onvolmaakt. Er is geen extern 'plan' en de verantwoordelijkheid om het systeem te verbeteren ligt geheel bij ons.
 
 ***
