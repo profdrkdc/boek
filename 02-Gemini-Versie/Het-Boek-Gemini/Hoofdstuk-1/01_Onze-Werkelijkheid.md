@@ -15,9 +15,6 @@ Door te leren van fouten in het verleden, fouten die meestal zijn gemaakt uit on
 Het plaatst ons in het heldere licht van de realiteit: de wereld, het leven is geen pretje, maar we kunnen de capaciteiten opbouwen om er iets aan te doen, het is een taak waar we voor staan en we hebben gereedschap in onze handen. Mensen hebben de unieke gave om compassie en zorg toe te voegen aan een systeem dat daar van nature niet over beschikt. Ziekte is een biochemische puzzel die wij kunnen oplossen. Een aardbeving is een geologisch feit waar wij ons tegen kunnen wapenen. 
 
 Mensen van de toekomst zijn volledig afhankelijk van ons, en in se zijn zij niet verschillend van ons. Zij zullen dezelfde noden hebben, dezelfde verlangens, dezelfde angsten, dezelfde dromen. Het enige verschil is dat zij in een wereld zullen leven die wij hebben gecreëerd, een wereld die beter of slechter zal zijn afhankelijk van de keuzes die wij vandaag maken. 
-\\\
-
-
 
 Dit boek is geen zoektocht naar het ‘waarom’ van het verleden. Die vraag leidt ons af. Wij kijken naar het ‘hoe’ van de toekomst. Dit boek is een uitnodiging tot intellectuele emancipatie op de schaal van de gehele beschaving, het is een uitnodiging tot actie. De wereld is een systeem met bugs, en wij zijn de debuggers, de programmeurs. De architecten en de bouwers. Lijden is de output van een verouderd systeem; welzijn moet de output zijn van het nieuwe systeem.
 
