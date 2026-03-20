@@ -1,5 +1,5 @@
 
-> _De enige reden waarom we leven, is om ervoor te zorgen dat de mensen die na ons komen een beter leven hebben dan wij._
+> _De enige reden waarom we leven, is om ervoor te zorgen dat de mensen die na ons komen een betere wereld krijgen om in te leven dan wij._
 
 
 # Hoofdstuk 1: De wereld waarin we leven, is niet volmaakt, niet voltooid, niet af, niet compleet... 
