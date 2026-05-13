@@ -147,7 +147,7 @@ function App() {
       },
       {
         id: 'vid-nl-basis',
-        title: 'Sovereign Reality: De Basisprincipes',
+        title: 'De Vrije Realiteit: De Basisprincipes',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
         duration: '06:41'
