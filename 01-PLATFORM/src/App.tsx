@@ -247,7 +247,7 @@ function App() {
       },
       {
         id: 'vid-en-ai-arch',
-        title: 'AI as System Architect',
+        title: 'The Systems Engineering Lens: AI as System Architect',
         type: 'video',
         url: `${baseUrl}/video/EN/AI_as_System_Architect.mp4`,
         duration: '04:32'
