@@ -1,22 +1,4 @@
-# Alles behalve 01 en 02 uitsluiten
-*
-!01-PLATFORM/
-!02-MANUSCRIPT/
-
-# Maar subdirectories en specifieke bestanden uitsluiten
-01-PLATFORM/public/audio/
-02-MANUSCRIPT/02-Media/Audio/
-00-GEREEDSCHAP/
-03-STRATEGIE/
-04-EVOLUTIE/
-05-ARCHIEF/
-.gemini/
-.github/
-lessons-learned/
-src/
-README.md
-
-# Altijd negeren
+# Dependencies
 node_modules/
 **/node_modules/
 dist/
@@ -25,8 +7,26 @@ venv/
 **/venv/
 .env
 .env.*
-*.log
+
+# Media - Handled by Git LFS (Do NOT ignore these)
+# *.m4a
+# *.mp4
+# *.mp3
+# *.wav
+# *.mov
+
+# IDE & OS files
 .DS_Store
 Thumbs.db
-.git/
-**/.git/
+*.log
+.vscode/
+.idea/
+
+# Local tools
+nlm_venv/
+00-GEREEDSCHAP/node_modules/
+01-PLATFORM/node_modules/
+05-ARCHIEF/Legacy-App-Backup/De-Lezer-App/node_modules/
+
+# Gemini / AI temporary files
+.gemini/tmp/
