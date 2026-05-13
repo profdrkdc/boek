@@ -123,6 +123,20 @@ function App() {
         type: 'audio',
         url: `${baseUrl}/audio/NL/De_mens_als_biologische_bootloader.m4a`,
         duration: '17:40'
+      },
+      {
+        id: 'vid-cr-conv',
+        title: 'Constructief Realisme & Convergentie',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Constructief_Realisme_en_de_Wet_van_Convergentie.mp4`,
+        duration: '06:09'
+      },
+      {
+        id: 'vid-ai-arch',
+        title: 'AI als Systeem-Architect',
+        type: 'video',
+        url: `${baseUrl}/video/NL/AI_als_Systeem_Architect.mp4`,
+        duration: '04:32'
       }
     ],
     'en': [
