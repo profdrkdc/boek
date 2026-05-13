@@ -1,5 +1,8 @@
 # De basis negeer-regels
 05-ARCHIEF/Legacy-App-Backup/
+00-GEREEDSCHAP/download_en_audio.sh
+01-PLATFORM/public/audio/
+02-MANUSCRIPT/02-Media/Audio/
 node_modules/
 **/node_modules/
 dist/
