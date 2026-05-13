@@ -78,7 +78,7 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
     *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (3e76899a) - Systeemfouten, AI Architect, Convergentie.
 *   **Titel**: "Principe 6: Competentie-Hiërarchie"
     *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (a21ff6a3)
-*   **Titel**: "Principe 7: Verantwoordelijkheid"
+*   **Titel**: "Principe 7: De Architecten van de Toekomst"
     *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (17ccce37)
 *   **Titel**: "Principe 12: Centaur Intelligentie"
     *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (3ce1da94)
