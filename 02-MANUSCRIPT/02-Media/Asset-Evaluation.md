@@ -122,7 +122,9 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "Principle 7: Responsibility toward the Future"
     *   **Status**: [ DOWNLOADED ]
 *   **Titel**: "Principle 12: Centaur Intelligence"
-    *   **Status**: [ DOWNLOADED ]
+    *   **Status**: [ DOWNLOADED ] | **ID**: e2cdb5e2
+*   **Titel**: "Principle 12: Centaur Intelligence (Deep Dive)"
+    *   **Status**: [ DOWNLOADED ] | **ID**: 0eea6c6c
 
 ---
 
