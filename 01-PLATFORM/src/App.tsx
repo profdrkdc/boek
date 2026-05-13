@@ -15,7 +15,7 @@ interface MediaItem {
 function App() {
   const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
   const [version, setVersion] = useState(() => localStorage.getItem('app-version') || 'nl')
-  const [activeChapterId, setActiveChapterId] = useState<string | null>(() => localStorage.getItem(`app-active-chapter-${version}`))
+  const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
   const [sidebarMode, setSidebarMode] = useState<'media' | 'text'>(() => (localStorage.getItem('app-sidebar-mode') as any) || 'media')
   const [viewMode, setViewMode] = useState<'reader' | 'video'>(() => (localStorage.getItem('app-view-mode') as any) || 'reader')
   
@@ -351,23 +351,9 @@ function App() {
   // Handle version (language) switch
   const handleVersionChange = (newVersion: string) => {
     if (newVersion === version) return;
-    
-    // Find current index before switching
-    const currentIndex = allChapters.findIndex(c => c.id === activeChapterId);
-    
     setVersion(newVersion);
-    
-    // Get the new book data for the target version
-    const nextBook = (bookData as any)[newVersion] || { sections: [] };
-    const nextChapters: any[] = [];
-    nextBook.sections.forEach((s: any) => s.chapters.forEach((c: any) => nextChapters.push(c)));
-    
-    // Set active chapter to same index if possible, else first chapter
-    if (currentIndex >= 0 && currentIndex < nextChapters.length) {
-      setActiveChapterId(nextChapters[currentIndex].id);
-    } else if (nextChapters.length > 0) {
-      setActiveChapterId(nextChapters[0].id);
-    }
+    setActiveChapterId(null);
+    setViewMode('reader');
   }
 
   // Note: Auto-selection of first chapter is disabled to allow showing the Title Page on first load
