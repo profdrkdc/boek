@@ -1,4 +1,5 @@
 # De basis negeer-regels
+05-ARCHIEF/Legacy-App-Backup/
 node_modules/
 **/node_modules/
 dist/
