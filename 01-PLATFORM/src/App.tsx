@@ -34,6 +34,8 @@ function App() {
   useEffect(() => {
     if (activeChapterId) {
       localStorage.setItem(`app-active-chapter-${version}`, activeChapterId)
+    } else {
+      localStorage.removeItem(`app-active-chapter-${version}`)
     }
   }, [activeChapterId, version])
   
@@ -410,6 +412,9 @@ function App() {
             onClick={() => {
               setActiveChapterId(null);
               setViewMode('reader');
+              setCurrentMedia(null);
+              setIsPlaying(false);
+              audioInstance.pause();
             }}
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2980b9] to-[#2c3e50] flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
@@ -554,7 +559,7 @@ function App() {
       <div className="flex-1 flex flex-col bg-[#fdfdfd] overflow-hidden">
         <header className="h-12 border-b border-[#eaeaea] flex items-center justify-between px-8 shrink-0 bg-white/80 backdrop-blur-md z-10">
           <div className="flex items-center gap-4">
-            {viewMode === 'reader' ? (
+            {viewMode === 'reader' && currentChapter ? (
               <>
                 <button 
                   disabled={currentIndex <= 0}
@@ -575,7 +580,7 @@ function App() {
                   {currentChapter.title}
                 </span>
               </>
-            ) : (
+            ) : viewMode === 'video' ? (
               <button 
                 onClick={() => setViewMode('reader')}
                 className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#2980b9] hover:text-[#333] transition-colors"
