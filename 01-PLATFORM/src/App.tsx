@@ -40,21 +40,41 @@ function App() {
   // Media State
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentMedia, setCurrentMedia] = useState<MediaItem | null>(null)
-  const audioRef = useRef<HTMLAudioElement>(null)
+  
+  // Use a persistent Audio object instead of a DOM element to prevent echo/duplicates
+  const audioInstance = useMemo(() => new Audio(), []);
 
-  // Auto-play effect when media changes
+  // Sync state with audio instance events
   useEffect(() => {
-    if (currentMedia && currentMedia.type === 'audio' && isPlaying && audioRef.current) {
-      // Small delay to ensure the src has been updated in the DOM
-      const playTimeout = setTimeout(() => {
-        audioRef.current?.play().catch(error => {
-          console.error("Playback failed:", error);
-          setIsPlaying(false);
-        });
-      }, 50);
-      return () => clearTimeout(playTimeout);
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleEnded = () => setIsPlaying(false);
+
+    audioInstance.addEventListener('play', handlePlay);
+    audioInstance.addEventListener('pause', handlePause);
+    audioInstance.addEventListener('ended', handleEnded);
+
+    return () => {
+      audioInstance.removeEventListener('play', handlePlay);
+      audioInstance.removeEventListener('pause', handlePause);
+      audioInstance.removeEventListener('ended', handleEnded);
+      audioInstance.pause();
+    };
+  }, [audioInstance]);
+
+  // Handle media changes
+  useEffect(() => {
+    if (currentMedia && currentMedia.type === 'audio') {
+      audioInstance.pause();
+      audioInstance.src = currentMedia.url;
+      audioInstance.load();
+      if (isPlaying) {
+        audioInstance.play().catch(e => console.error("Playback failed", e));
+      }
+    } else {
+      audioInstance.pause();
     }
-  }, [currentMedia?.id]); // Only trigger when the actual ID changes
+  }, [currentMedia?.id, audioInstance]);
 
   const mediaData: Record<string, MediaItem[]> = {
     'nl': [
@@ -356,25 +376,17 @@ function App() {
 
   const handleMediaClick = (item: MediaItem) => {
     if (item.type === 'video') {
-      // Stop audio if it was playing
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
+      audioInstance.pause();
       setCurrentMedia(item);
       setViewMode('video');
       setIsPlaying(true);
     } else {
       if (currentMedia?.id === item.id) {
-        if (isPlaying) audioRef.current?.pause();
-        else audioRef.current?.play();
+        if (isPlaying) audioInstance.pause();
+        else audioInstance.play().catch(e => console.error(e));
         setIsPlaying(!isPlaying);
       } else {
-        // Stop and reset current audio before switching
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-        }
+        audioInstance.pause();
         setCurrentMedia(item);
         setIsPlaying(true);
       }
@@ -514,23 +526,14 @@ function App() {
             </div>
             <button 
               onClick={() => {
-                if (isPlaying) audioRef.current?.pause();
-                else audioRef.current?.play();
-                setIsPlaying(!isPlaying);
+                if (isPlaying) audioInstance.pause();
+                else audioInstance.play().catch(e => console.error(e));
               }}
               className="w-10 h-10 rounded-full bg-[#2980b9] flex items-center justify-center text-white hover:bg-[#2c3e50] transition-all shrink-0 shadow-lg"
             >
               {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" className="ml-1" />}
             </button>
           </div>
-          <audio 
-            ref={audioRef} 
-            src={currentMedia?.url} 
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onEnded={() => setIsPlaying(false)}
-            hidden 
-          />
         </div>
       </aside>
 
