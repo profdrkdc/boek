@@ -246,6 +246,13 @@ function App() {
         duration: '07:38'
       },
       {
+        id: 'vid-en-upgrade',
+        title: 'Sovereign Reality: System Upgrade Overview',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Sovereign_Reality_System_Upgrade_Overview.mp4`,
+        duration: '07:14'
+      },
+      {
         id: 'vid-en-p1-2',
         title: 'Principle 1 & 2: Natural Laws',
         type: 'video',
