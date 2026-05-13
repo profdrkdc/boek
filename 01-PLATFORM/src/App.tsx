@@ -588,7 +588,7 @@ function App() {
                 <Book size={14} />
                 {version === 'nl' ? 'Terug naar lezen' : 'Back to reading'}
               </button>
-            )}
+            ) : null}
           </div>
         </header>
 
