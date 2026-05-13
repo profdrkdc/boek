@@ -204,15 +204,16 @@ function App() {
     }
   }
 
+  // Note: Auto-selection of first chapter is disabled to allow showing the Title Page on first load
+  /* 
   useEffect(() => {
     if (!activeChapterId && allChapters.length > 0) {
       setActiveChapterId(allChapters[0].id);
     }
   }, [allChapters, activeChapterId]);
+  */
 
-  let currentChapter = allChapters.find(c => c.id === activeChapterId) || 
-                       allChapters[0] || 
-                       { title: 'Geen inhoud', content: 'Deze versie heeft nog geen inhoud.' };
+  let currentChapter = allChapters.find(c => c.id === activeChapterId);
 
   const currentIndex = allChapters.findIndex(c => c.id === activeChapterId);
 
@@ -239,7 +240,15 @@ function App() {
       {/* Sidebar */}
       <aside className="w-[300px] flex flex-col bg-[#f7f7f7] border-r border-[#eaeaea] shrink-0 font-sans text-[15px] z-20">
         <div className="p-6 pb-2">
-          <h1 className="text-xl font-normal text-[#333] mb-4">De Architect</h1>
+          <div className="flex items-center gap-3 mb-6 group cursor-pointer" onClick={() => setActiveChapterId(null)}>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2980b9] to-[#2c3e50] flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
+              <span className="font-serif font-bold text-lg">Ω</span>
+            </div>
+            <div className="h-4 w-[1px] bg-[#ddd]"></div>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-black text-[#555] opacity-80 group-hover:opacity-100 transition-opacity">
+              Sovereign Reality
+            </span>
+          </div>
           
             <div className="flex justify-between mb-2">
               <button 
@@ -436,13 +445,49 @@ function App() {
                 </p>
               </div>
             </div>
-          ) : (
+          ) : currentChapter ? (
             <div className="p-12 lg:p-24 pt-16 bg-gradient-to-b from-white to-[#fdfdfd] animate-in fade-in duration-500">
               <div className="max-w-[800px] mx-auto">
                 <article className="prose prose-lg">
                   <ReactMarkdown>{currentChapter.content}</ReactMarkdown>
                 </article>
                 <div className="h-32" />
+              </div>
+            </div>
+          ) : (
+            /* Title Page / Landing State */
+            <div className="w-full h-full flex items-center justify-center p-12 lg:p-24 bg-[#fdfdfd] animate-in fade-in zoom-in-95 duration-1000">
+              <div className="max-w-3xl text-center">
+                <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-[#2980b9]/5 border border-[#2980b9]/10 text-[#2980b9] text-[10px] uppercase tracking-[0.4em] font-black animate-pulse">
+                  Foundational Synthesis v3.1
+                </div>
+                <h1 className="text-5xl lg:text-7xl font-serif text-[#1a1a1a] mb-8 leading-tight">
+                  Verantwoordelijkheid tegenover de Toekomst
+                </h1>
+                <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#2980b9] to-transparent mx-auto mb-10 opacity-30"></div>
+                <p className="text-xl lg:text-2xl text-[#666] font-light leading-relaxed mb-12 italic">
+                  Een filosofische verkenning van menselijk potentieel, ethiek en de bouwstenen voor een functionele samenleving.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                  <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Axioma</div>
+                    <p className="text-sm text-[#444] leading-snug">Het universum is een causaal systeem bestuurd door natuurwetten.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Missie</div>
+                    <p className="text-sm text-[#444] leading-snug">Het reduceren van entropie door de opbouw van universele vermogens.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Doel</div>
+                    <p className="text-sm text-[#444] leading-snug">Een lijdenloos bestaan voor alle bewuste wezens van de toekomst.</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setSidebarMode('media')}
+                  className="mt-16 px-8 py-4 rounded-full bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#2980b9] transition-all shadow-xl hover:shadow-[#2980b9]/20"
+                >
+                  Start Verkenning
+                </button>
               </div>
             </div>
           )}
