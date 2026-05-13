@@ -137,6 +137,27 @@ function App() {
         type: 'video',
         url: `${baseUrl}/video/NL/AI_als_Systeem_Architect.mp4`,
         duration: '04:32'
+      },
+      {
+        id: 'vid-p1-2',
+        title: 'Principe 1 & 2: Natuurwetten',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
+        duration: '09:51'
+      },
+      {
+        id: 'vid-p7',
+        title: 'Principe 7: Verantwoordelijkheid',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_7_Verantwoordelijkheid.mp4`,
+        duration: '09:29'
+      },
+      {
+        id: 'vid-p12',
+        title: 'Principe 12: Centaur Intelligentie',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_12_Centaur_Intelligentie.mp4`,
+        duration: '07:14'
       }
     ],
     'en': [
@@ -181,6 +202,27 @@ function App() {
         type: 'audio',
         url: `${baseUrl}/audio/EN/A_software_patch_for_humanity.m4a`,
         duration: '17:19'
+      },
+      {
+        id: 'vid-en-p1-2',
+        title: 'Principle 1 & 2: Natural Laws',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_1_and_2_Natural_Laws.mp4`,
+        duration: '09:27'
+      },
+      {
+        id: 'vid-en-p7',
+        title: 'Principle 7: Responsibility',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_7_Responsibility.mp4`,
+        duration: '07:52'
+      },
+      {
+        id: 'vid-en-p12',
+        title: 'Principle 12: Centaur Intelligence',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_12_Centaur_Intelligence.mp4`,
+        duration: '08:20'
       }
     ]
   }
