@@ -67,7 +67,7 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "Humanity 2.0: Debugging the Human Animal" (Constructive Realism)
     *   **URL**: [Open](https://notebooklm.google.com/notebook/f034dec2-b5ec-4c2f-bf2a-87845664c94b/artifact/6a6cc6a8-12c4-4c31-91cb-682a27e44a43)
     *   **Status**: [ DOWNLOADED ] | **Feedback**: EN Audio - Verplaatst naar EN sectie.
-*   **Titel**: "The Systems Engineering Lens" (AI as System Architect)
+*   **Titel**: "The Systems Engineering Lens: AI as System Architect"
     *   **URL**: [Open](https://notebooklm.google.com/notebook/f034dec2-b5ec-4c2f-bf2a-87845664c94b/artifact/1aafcf08-ae9a-4646-9188-07f7f89297b7)
     *   **Status**: [ DOWNLOADED ] | **Feedback**: EN Audio - Verplaatst naar EN sectie.
 *   **Titel**: "Principe 1 & 2: De Wereld als Bouwwerf"
