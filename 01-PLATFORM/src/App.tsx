@@ -143,21 +143,28 @@ function App() {
         title: 'Principe 1 & 2: Natuurwetten',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
-        duration: '09:51'
+        duration: '06:41'
+      },
+      {
+        id: 'vid-p3',
+        title: 'Principe 3: Informatie-Integriteit',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_3_Informatie_Integriteit.mp4`,
+        duration: '07:25'
       },
       {
         id: 'vid-p7',
         title: 'Principe 7: Verantwoordelijkheid',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_7_Verantwoordelijkheid.mp4`,
-        duration: '09:29'
+        duration: '08:45'
       },
       {
         id: 'vid-p12',
         title: 'Principe 12: Centaur Intelligentie',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_12_Centaur_Intelligentie.mp4`,
-        duration: '07:14'
+        duration: '11:10'
       }
     ],
     'en': [
@@ -204,11 +211,25 @@ function App() {
         duration: '17:19'
       },
       {
+        id: 'vid-en-supreme',
+        title: 'Sovereign Reality: Supreme Overview',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Sovereign_Reality_Supreme_Overview.mp4`,
+        duration: '07:38'
+      },
+      {
         id: 'vid-en-p1-2',
         title: 'Principle 1 & 2: Natural Laws',
         type: 'video',
         url: `${baseUrl}/video/EN/Principle_1_and_2_Natural_Laws.mp4`,
         duration: '09:27'
+      },
+      {
+        id: 'vid-en-p3',
+        title: 'Principle 3: Information Integrity',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_3_Information_Integrity.mp4`,
+        duration: '06:27'
       },
       {
         id: 'vid-en-p7',
