@@ -65,6 +65,13 @@ function App() {
   // Handle media changes
   useEffect(() => {
     if (currentMedia && currentMedia.type === 'audio') {
+      // Global pause for any other media elements on the page (like embedded players)
+      document.querySelectorAll('audio, video').forEach(el => {
+        if (el !== audioInstance) {
+          (el as HTMLMediaElement).pause();
+        }
+      });
+
       audioInstance.pause();
       audioInstance.src = currentMedia.url;
       audioInstance.load();
@@ -598,7 +605,16 @@ function App() {
             <div className="p-12 lg:p-24 pt-16 bg-gradient-to-b from-white to-[#fdfdfd] animate-in fade-in duration-500">
               <div className="max-w-[800px] mx-auto">
                 <article className="prose prose-lg">
-                  <ReactMarkdown>{currentChapter.content}</ReactMarkdown>
+                  <ReactMarkdown 
+                    components={{
+                      // Strip out audio and iframe elements from the markdown content
+                      audio: () => null,
+                      iframe: () => null,
+                      video: () => null
+                    }}
+                  >
+                    {currentChapter.content}
+                  </ReactMarkdown>
                 </article>
                 <div className="h-32" />
               </div>
