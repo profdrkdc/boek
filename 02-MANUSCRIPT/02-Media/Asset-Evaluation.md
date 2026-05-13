@@ -15,7 +15,7 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "De Vrije Realiteit: Overzicht" (Supreme Overview NL)
     *   **Status**: [ DOWNLOADED ] | **ID**: 5d0ffd48
     *   **Feedback**: Legacy Kernel, de dood als systeemfout, de wet van convergentie.
-*   **Titel**: "Sovereign Reality: De Basisprincipes" (NL)
+*   **Titel**: "De Vrije Realiteit: De Basisprincipes" (NL)
     *   **Status**: [ DOWNLOADED ] | **ID**: 45fb6a3b
     *   **Feedback**: Roadmap van P1 t/m P6 (Bouwwerf metafoor).
 *   **Titel**: "De Majesteit van het Global Operating System" (Supreme Video)
