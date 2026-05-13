@@ -146,8 +146,15 @@ function App() {
         duration: '09:56'
       },
       {
+        id: 'vid-nl-basis',
+        title: 'Sovereign Reality: De Basisprincipes',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
+        duration: '06:41'
+      },
+      {
         id: 'vid-p1-2',
-        title: 'Principe 1 & 2: Natuurwetten',
+        title: 'Principe 1 & 2: De Wereld als Bouwwerf',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
         duration: '06:41'
@@ -250,6 +257,13 @@ function App() {
         title: 'Principle 3: Information Integrity',
         type: 'video',
         url: `${baseUrl}/video/EN/Principle_3_Information_Integrity.mp4`,
+        duration: '06:27'
+      },
+      {
+        id: 'vid-en-p4',
+        title: 'Principle 4: Radical Transparency',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_4_Radical_Transparency.mp4`,
         duration: '06:27'
       },
       {
