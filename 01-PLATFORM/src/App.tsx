@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import bookData from './data/book.json'
 import { ChevronLeft, ChevronRight, Headphones, Play, Pause, Video, Book, Film } from 'lucide-react'
@@ -76,7 +76,7 @@ function App() {
       audioInstance.src = currentMedia.url;
       audioInstance.load();
       if (isPlaying) {
-        audioInstance.play().catch(e => console.error("Playback failed", e));
+        audioInstance.play().catch((e: any) => console.error("Playback failed", e));
       }
     } else {
       audioInstance.pause();
@@ -390,7 +390,7 @@ function App() {
     } else {
       if (currentMedia?.id === item.id) {
         if (isPlaying) audioInstance.pause();
-        else audioInstance.play().catch(e => console.error(e));
+        else audioInstance.play().catch((e: any) => console.error(e));
         setIsPlaying(!isPlaying);
       } else {
         audioInstance.pause();
@@ -534,7 +534,7 @@ function App() {
             <button 
               onClick={() => {
                 if (isPlaying) audioInstance.pause();
-                else audioInstance.play().catch(e => console.error(e));
+                else audioInstance.play().catch((e: any) => console.error(e));
               }}
               className="w-10 h-10 rounded-full bg-[#2980b9] flex items-center justify-center text-white hover:bg-[#2c3e50] transition-all shrink-0 shadow-lg"
             >
