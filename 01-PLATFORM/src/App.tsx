@@ -405,7 +405,13 @@ function App() {
       {/* Sidebar */}
       <aside className="w-[300px] flex flex-col bg-[#f7f7f7] border-r border-[#eaeaea] shrink-0 font-sans text-[15px] z-20">
         <div className="p-6 pb-2">
-          <div className="flex items-center gap-3 mb-6 group cursor-pointer" onClick={() => setActiveChapterId(null)}>
+          <div 
+            className="flex items-center gap-3 mb-6 group cursor-pointer" 
+            onClick={() => {
+              setActiveChapterId(null);
+              setViewMode('reader');
+            }}
+          >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2980b9] to-[#2c3e50] flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
               <span className="font-serif font-bold text-lg">Ω</span>
             </div>
@@ -613,7 +619,7 @@ function App() {
                       video: () => null
                     }}
                   >
-                    {currentChapter.content}
+                    {currentChapter?.content || ''}
                   </ReactMarkdown>
                 </article>
                 <div className="h-32" />
