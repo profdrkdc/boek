@@ -13,4 +13,8 @@ Always use the `notebooklm-mcp-cli` (aliased as `nlm`) for:
 - The CLI is installed in `/home/kareltestspecial/0-boek/00-GEREEDSCHAP/nlm_venv`.
 - Due to potential path shifts, invoke the tool directly via its venv python:
   `/home/kareltestspecial/0-boek/00-GEREEDSCHAP/nlm_venv/bin/python3 -m notebooklm_tools.cli.main`
-- This ensures the "Sovereign Reality" framework (Global v1.0) remains the single source of truth for all generated media.
+- **Source of Truth**:
+  - **English (Global):** `7ab2c68e-4543-44c8-bad1-e27caf7cbddc`
+  - **Dutch (Manuscript):** `f034dec2-b5ec-4c2f-bf2a-87845664c94b`
+- This ensures the "Sovereign Reality" framework remains the single source of truth for all generated media.
+
