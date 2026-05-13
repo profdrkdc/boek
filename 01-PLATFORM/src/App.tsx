@@ -168,7 +168,7 @@ function App() {
       },
       {
         id: 'vid-p4',
-        title: 'Principe 4: Radicale Transparantie',
+        title: 'De Vrije Realiteit: Systeem-Analyse',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_4_Radicale_Transparantie.mp4`,
         duration: '09:29'
