@@ -13,8 +13,9 @@ interface MediaItem {
 }
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
   const [version, setVersion] = useState(() => localStorage.getItem('app-version') || 'nl')
-  const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
+  const [activeChapterId, setActiveChapterId] = useState<string | null>(() => localStorage.getItem(`app-active-chapter-${version}`))
   const [sidebarMode, setSidebarMode] = useState<'media' | 'text'>(() => (localStorage.getItem('app-sidebar-mode') as any) || 'media')
   const [viewMode, setViewMode] = useState<'reader' | 'video'>(() => (localStorage.getItem('app-view-mode') as any) || 'reader')
   
@@ -29,6 +30,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem('app-view-mode', viewMode)
   }, [viewMode])
+
+  useEffect(() => {
+    if (activeChapterId) {
+      localStorage.setItem(`app-active-chapter-${version}`, activeChapterId)
+    }
+  }, [activeChapterId, version])
   
   // Media State
   const [isPlaying, setIsPlaying] = useState(false)
@@ -51,7 +58,7 @@ function App() {
         id: 'herschrijf-software',
         title: 'Herschrijf de software van je bestaan',
         type: 'audio',
-        url: '/audio/NL/Herschrijf_de_software_van_je_bestaan.m4a',
+        url: `${baseUrl}/audio/NL/Herschrijf_de_software_van_je_bestaan.m4a`,
         duration: '32:46'
       }
     ],
@@ -60,42 +67,42 @@ function App() {
         id: 'upgrading-humanity',
         title: 'Upgrading humanity to a Sovereign Reality',
         type: 'audio',
-        url: '/audio/EN/Upgrading_humanity_to_a_Sovereign_Reality.m4a',
+        url: `${baseUrl}/audio/EN/Upgrading_humanity_to_a_Sovereign_Reality.m4a`,
         duration: '22:25'
       },
       {
         id: 'patching-human-legacy',
         title: 'Patching the Human Legacy Kernel',
         type: 'audio',
-        url: '/audio/EN/Patching_the_Human_Legacy_Kernel.m4a',
+        url: `${baseUrl}/audio/EN/Patching_the_Human_Legacy_Kernel.m4a`,
         duration: '18:59'
       },
       {
         id: 'patching-software-bugs',
         title: 'Patching the software bugs of humanity',
         type: 'audio',
-        url: '/audio/EN/Patching_the_software_bugs_of_humanity.m4a',
+        url: `${baseUrl}/audio/EN/Patching_the_software_bugs_of_humanity.m4a`,
         duration: '22:06'
       },
       {
         id: 'human-suffering-bug',
         title: 'Human suffering is a technical bug',
         type: 'audio',
-        url: '/audio/EN/Human_suffering_is_a_technical_bug.m4a',
+        url: `${baseUrl}/audio/EN/Human_suffering_is_a_technical_bug.m4a`,
         duration: '16:54'
       },
       {
         id: 'debugging-legacy-kernel',
         title: 'Debugging the legacy kernel of humanity',
         type: 'audio',
-        url: '/audio/EN/Debugging_the_legacy_kernel_of_humanity.m4a',
+        url: `${baseUrl}/audio/EN/Debugging_the_legacy_kernel_of_humanity.m4a`,
         duration: '21:23'
       },
       {
         id: 'software-patch-humanity',
         title: 'A software patch for humanity',
         type: 'audio',
-        url: '/audio/EN/A_software_patch_for_humanity.m4a',
+        url: `${baseUrl}/audio/EN/A_software_patch_for_humanity.m4a`,
         duration: '17:19'
       }
     ]
@@ -104,26 +111,45 @@ function App() {
   const currentMediaItems = mediaData[version] || []
   const currentBook = (bookData as any)[version] || { sections: [] }
   
-  useEffect(() => {
-    if (!activeChapterId && currentBook.sections.length > 0) {
-      const firstSection = currentBook.sections[0];
-      if (firstSection.chapters.length > 0) {
-        setActiveChapterId(firstSection.chapters[0].id);
-      }
-    }
-  }, [version, currentBook]);
-
-  let currentChapter = { title: 'Geen inhoud', content: 'Deze versie heeft nog geen inhoud.' };
-  let allChapters: any[] = [];
-  
+  // Flat list of chapters for navigation and index-based switching
+  const allChapters: any[] = [];
   currentBook.sections.forEach((section: any) => {
     section.chapters.forEach((chap: any) => {
       allChapters.push(chap);
-      if (chap.id === activeChapterId) {
-        currentChapter = chap;
-      }
     });
   });
+
+  // Handle version (language) switch
+  const handleVersionChange = (newVersion: string) => {
+    if (newVersion === version) return;
+    
+    // Find current index before switching
+    const currentIndex = allChapters.findIndex(c => c.id === activeChapterId);
+    
+    setVersion(newVersion);
+    
+    // Get the new book data for the target version
+    const nextBook = (bookData as any)[newVersion] || { sections: [] };
+    const nextChapters: any[] = [];
+    nextBook.sections.forEach((s: any) => s.chapters.forEach((c: any) => nextChapters.push(c)));
+    
+    // Set active chapter to same index if possible, else first chapter
+    if (currentIndex >= 0 && currentIndex < nextChapters.length) {
+      setActiveChapterId(nextChapters[currentIndex].id);
+    } else if (nextChapters.length > 0) {
+      setActiveChapterId(nextChapters[0].id);
+    }
+  }
+
+  useEffect(() => {
+    if (!activeChapterId && allChapters.length > 0) {
+      setActiveChapterId(allChapters[0].id);
+    }
+  }, [allChapters, activeChapterId]);
+
+  let currentChapter = allChapters.find(c => c.id === activeChapterId) || 
+                       allChapters[0] || 
+                       { title: 'Geen inhoud', content: 'Deze versie heeft nog geen inhoud.' };
 
   const currentIndex = allChapters.findIndex(c => c.id === activeChapterId);
 
@@ -152,22 +178,20 @@ function App() {
         <div className="p-6 pb-2">
           <h1 className="text-xl font-normal text-[#333] mb-4">De Architect</h1>
           
-          <div className="flex flex-col border-b border-[#eee] pb-4 mb-4">
             <div className="flex justify-between mb-2">
               <button 
-                onClick={() => setVersion('nl')}
+                onClick={() => handleVersionChange('nl')}
                 className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'nl' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
               >
                 Nederlands
               </button>
               <button 
-                onClick={() => setVersion('en')}
+                onClick={() => handleVersionChange('en')}
                 className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'en' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
               >
                 English
               </button>
             </div>
-          </div>
 
           <div className="flex bg-[#eee] p-1 rounded-lg mb-4">
             <button 
