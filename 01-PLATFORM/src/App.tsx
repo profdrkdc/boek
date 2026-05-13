@@ -139,6 +139,13 @@ function App() {
         duration: '04:32'
       },
       {
+        id: 'vid-nl-supreme',
+        title: 'De Vrije Realiteit: Overzicht',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Sovereign_Reality_Supreme_Overview_NL.mp4`,
+        duration: '09:56'
+      },
+      {
         id: 'vid-p1-2',
         title: 'Principe 1 & 2: Natuurwetten',
         type: 'video',
@@ -151,6 +158,20 @@ function App() {
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_3_Informatie_Integriteit.mp4`,
         duration: '07:25'
+      },
+      {
+        id: 'vid-p4',
+        title: 'Principe 4: Radicale Transparantie',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_4_Radicale_Transparantie.mp4`,
+        duration: '09:29'
+      },
+      {
+        id: 'vid-p6',
+        title: 'Principe 6: Competentie-Hiërarchie',
+        type: 'video',
+        url: `${baseUrl}/video/NL/Principe_6_Competentie_Hierarchie.mp4`,
+        duration: '10:00'
       },
       {
         id: 'vid-p7',
@@ -230,6 +251,20 @@ function App() {
         type: 'video',
         url: `${baseUrl}/video/EN/Principle_3_Information_Integrity.mp4`,
         duration: '06:27'
+      },
+      {
+        id: 'vid-en-p5',
+        title: 'Principle 5: Decentralized Authority',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_5_Decentralized_Authority.mp4`,
+        duration: '08:28'
+      },
+      {
+        id: 'vid-en-p6',
+        title: 'Principle 6: Competence Hierarchy',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_6_Competence_Hierarchy.mp4`,
+        duration: '09:32'
       },
       {
         id: 'vid-en-p7',
