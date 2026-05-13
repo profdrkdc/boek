@@ -299,7 +299,14 @@ function App() {
         title: 'Principle 12: Centaur Intelligence',
         type: 'video',
         url: `${baseUrl}/video/EN/Principle_12_Centaur_Intelligence.mp4`,
-        duration: '08:20'
+        duration: '08:19'
+      },
+      {
+        id: 'vid-en-p12-v2',
+        title: 'Principle 12: Centaur Intelligence (Deep Dive)',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Principle_12_Centaur_Intelligence_v2.mp4`,
+        duration: '09:39'
       }
     ]
   }
