@@ -55,11 +55,74 @@ function App() {
   const mediaData: Record<string, MediaItem[]> = {
     'nl': [
       {
-        id: 'herschrijf-software',
+        id: '9133fb61',
         title: 'Herschrijf de software van je bestaan',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Herschrijf_de_software_van_je_bestaan.m4a`,
+        url: `${baseUrl}/audio/NL/9133fb61-ab72-42cc-8a2c-783257d62d48.m4a`,
         duration: '32:46'
+      },
+      {
+        id: '84ecc8ba',
+        title: 'Menselijk lijden is een biologische softwarefout',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/84ecc8ba-7d05-44c3-9999-b831dc832f7f.m4a`,
+        duration: '21:05'
+      },
+      {
+        id: 'b65e1959',
+        title: 'De definitieve patch voor de mensheid',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/b65e1959-2f89-4a7c-a2d5-4561eb6d1845.m4a`,
+        duration: '22:15'
+      },
+      {
+        id: '3d796276',
+        title: 'De dood is slechts een softwarefout',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/3d796276-dcf8-4079-8548-3ca0bbd4eff7.m4a`,
+        duration: '20:10'
+      },
+      {
+        id: '1762e392',
+        title: 'AI als medicijn voor menselijk lijden',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/1762e392-3573-4ece-9d2c-864bf15a85fa.m4a`,
+        duration: '18:45'
+      },
+      {
+        id: '5bea991b',
+        title: 'Waarom AI ons wiskundig nodig heeft',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/5bea991b-2f1d-4727-878d-9729da280b28.m4a`,
+        duration: '19:30'
+      },
+      {
+        id: '972dfe15',
+        title: 'Onze hersenen draaien op verouderde software',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/972dfe15-4872-4449-bebf-a2165b24fa62.m4a`,
+        duration: '21:55'
+      },
+      {
+        id: '0099e7b7',
+        title: 'Menselijk lijden als herstelbare systeemfout',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/0099e7b7-9552-499c-9b32-b30e921b8406.m4a`,
+        duration: '18:20'
+      },
+      {
+        id: 'a7180dd0',
+        title: 'Debug de wereld als defecte software',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/a7180dd0-5481-41d0-a1f6-596134049c05.m4a`,
+        duration: '20:45'
+      },
+      {
+        id: 'ffba6042',
+        title: 'De mens als biologische bootloader',
+        type: 'audio',
+        url: `${baseUrl}/audio/NL/ffba6042-b1b1-41f2-9f8f-ab5710b8533d.m4a`,
+        duration: '17:40'
       }
     ],
     'en': [
