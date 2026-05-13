@@ -139,13 +139,6 @@ function App() {
         duration: '06:41'
       },
       {
-        id: 'vid-p1-2',
-        title: 'Principe 1 & 2: De Wereld als Bouwwerf',
-        type: 'video',
-        url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
-        duration: '06:41'
-      },
-      {
         id: 'vid-p3',
         title: 'Principe 3: Informatie-Integriteit',
         type: 'video',
