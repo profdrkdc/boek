@@ -282,7 +282,7 @@ function App() {
               }`}
             >
               <Book size={14} />
-              Lezen
+              Text
             </button>
           </div>
         </div>
