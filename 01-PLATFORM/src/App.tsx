@@ -45,12 +45,16 @@ function App() {
   // Auto-play effect when media changes
   useEffect(() => {
     if (currentMedia && currentMedia.type === 'audio' && isPlaying && audioRef.current) {
-      audioRef.current.play().catch(error => {
-        console.error("Playback failed:", error);
-        setIsPlaying(false);
-      });
+      // Small delay to ensure the src has been updated in the DOM
+      const playTimeout = setTimeout(() => {
+        audioRef.current?.play().catch(error => {
+          console.error("Playback failed:", error);
+          setIsPlaying(false);
+        });
+      }, 50);
+      return () => clearTimeout(playTimeout);
     }
-  }, [currentMedia]);
+  }, [currentMedia?.id]); // Only trigger when the actual ID changes
 
   const mediaData: Record<string, MediaItem[]> = {
     'nl': [
@@ -352,6 +356,11 @@ function App() {
 
   const handleMediaClick = (item: MediaItem) => {
     if (item.type === 'video') {
+      // Stop audio if it was playing
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       setCurrentMedia(item);
       setViewMode('video');
       setIsPlaying(true);
@@ -361,7 +370,11 @@ function App() {
         else audioRef.current?.play();
         setIsPlaying(!isPlaying);
       } else {
-        // Reset current media first to trigger the effect properly
+        // Stop and reset current audio before switching
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
         setCurrentMedia(item);
         setIsPlaying(true);
       }
