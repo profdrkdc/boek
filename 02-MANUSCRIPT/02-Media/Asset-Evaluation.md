@@ -12,9 +12,12 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "Waarom AI ons wiskundig nodig heeft" (Deep Dive)
     *   **URL**: [Open](https://notebooklm.google.com/notebook/f034dec2-b5ec-4c2f-bf2a-87845664c94b/artifact/e07f9c8d-4a1e-4b4d-b92c-0e7f9c8d4a1e) (Check NotebookLM voor nieuwste)
     *   **Status**: [ ] | **Feedback**: 
-*   **Titel**: "De Grote Correctie: De Stem van de Realiteit" (Supreme Audio)
-    *   **Status**: [ GENERATING... ]
-    *   **Feedback**: 
+*   **Titel**: "De Vrije Realiteit: Overzicht" (Supreme Overview NL)
+    *   **Status**: [ DOWNLOADED ] | **ID**: 5d0ffd48
+    *   **Feedback**: Legacy Kernel, de dood als systeemfout, de wet van convergentie.
+*   **Titel**: "Sovereign Reality: De Basisprincipes" (NL)
+    *   **Status**: [ DOWNLOADED ] | **ID**: 45fb6a3b
+    *   **Feedback**: Roadmap van P1 t/m P6 (Bouwwerf metafoor).
 *   **Titel**: "De Majesteit van het Global Operating System" (Supreme Video)
     *   **Status**: [ GENERATING... ]
     *   **Feedback**: 
@@ -67,12 +70,18 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "The Systems Engineering Lens (Debugging Humanity)"
     *   **URL**: [Open](https://notebooklm.google.com/notebook/f034dec2-b5ec-4c2f-bf2a-87845664c94b/artifact/1aafcf08-ae9a-4646-9188-07f7f89297b7)
     *   **Status**: [ DOWNLOADED ] | **Feedback**: AI als Systeem-Architect focus.
-*   **Titel**: "Principe 1 & 2: Natuurwetten"
-    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie
-*   **Titel**: "Principe 7: Verantwoordelijkheid tegenover de toekomst"
-    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie
+*   **Titel**: "Principe 1 & 2: De Wereld als Bouwwerf"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (45fb6a3b)
+*   **Titel**: "Principe 3: Informatie-Integriteit"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (33de2f34)
+*   **Titel**: "Principe 4: Radicale Transparantie"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (3e76899a)
+*   **Titel**: "Principe 6: Competentie-Hiërarchie"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (a21ff6a3)
+*   **Titel**: "Principe 7: Verantwoordelijkheid"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (17ccce37)
 *   **Titel**: "Principe 12: Centaur Intelligentie"
-    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (3ce1da94)
 
 ---
 
@@ -95,7 +104,17 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
     *   **Prompt**: "Present this as a fundamental manifesto of reality. Speak with absolute authority. Avoid phrases like 'the sources say' or 'according to the document'. Present the Law of Convergence as a self-evident law of nature."
     *   **Target Duration**: ~32:00
     *   **Feedback**: 
+*   **Titel**: "Sovereign Reality: Supreme Overview"
+    *   **Status**: [ DOWNLOADED ] | **ID**: 0d6687b8
 *   **Titel**: "Principle 1 & 2: Natural Laws"
+    *   **Status**: [ DOWNLOADED ]
+*   **Titel**: "Principle 3: Information Integrity"
+    *   **Status**: [ DOWNLOADED ]
+*   **Titel**: "Principle 4: Radical Transparency"
+    *   **Status**: [ DOWNLOADED ]
+*   **Titel**: "Principle 5: Decentralized Authority"
+    *   **Status**: [ DOWNLOADED ]
+*   **Titel**: "Principle 6: Competence Hierarchy"
     *   **Status**: [ DOWNLOADED ]
 *   **Titel**: "Principle 7: Responsibility toward the Future"
     *   **Status**: [ DOWNLOADED ]
