@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background-color: #fdfdfd;
+  --sidebar-bg: #f7f7f7;
+  --text-color: #2c3e50;
+  --link-color: #2980b9;
+  --border-color: #eaeaea;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Georgia", "Palatino Linotype", "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Override Tailwind Typography for that Docsify look */
+.prose {
+  color: var(--text-color) !important;
+  max-width: 800px !important;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  color: #333 !important;
+  margin-top: 2em !important;
+  border-bottom: none !important;
+}
+
+.prose h1 { font-size: 2.5em !important; margin-bottom: 1em !important; }
+
+.prose a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  border-bottom: 1px dotted var(--link-color) !important;
+}
+
+.prose strong {
+  color: var(--link-color) !important;
+  font-weight: 700 !important;
+}
+
+.prose blockquote {
+  border-left: 4px solid #ddd !important;
+  margin-left: 0 !important;
+  padding-left: 20px !important;
+  color: #666 !important;
+  font-style: italic !important;
+  background: transparent !important;
+}

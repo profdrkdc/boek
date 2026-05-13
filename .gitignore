@@ -1,0 +1,24 @@
+# De basis negeer-regels
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Python omgevingen (beiden varianten negeren)
+venv/
+**/venv/
+nlm_venv/
+**/nlm_venv/
+
+# Git historie van backups negeren (voorkomt "embedded repo" waarschuwingen)
+.git/
+**/.git/
+
+# Omgeving en logs
+.env
+.env.*
+*.log
+
+# OS specifieke bestanden
+.DS_Store
+Thumbs.db
