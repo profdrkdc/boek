@@ -587,7 +587,7 @@ function App() {
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto scroll-smooth">
+        <main key={activeChapterId || 'landing'} className="flex-1 overflow-y-auto scroll-smooth">
           {viewMode === 'video' && currentMedia ? (
             <div className="w-full h-full bg-black flex flex-col items-center justify-center p-8 animate-in fade-in zoom-in-95 duration-500">
               <div className="max-w-5xl w-full aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-2xl relative group">
@@ -633,31 +633,51 @@ function App() {
                   Foundational Synthesis v3.1
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-serif text-[#1a1a1a] mb-8 leading-tight">
-                  Verantwoordelijkheid tegenover de Toekomst
+                  {version === 'nl' ? 'Verantwoordelijkheid tegenover de Toekomst' : 'Responsibility towards the Future'}
                 </h1>
                 <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#2980b9] to-transparent mx-auto mb-10 opacity-30"></div>
                 <p className="text-xl lg:text-2xl text-[#666] font-light leading-relaxed mb-12 italic">
-                  Een filosofische verkenning van menselijk potentieel, ethiek en de bouwstenen voor een functionele samenleving.
+                  {version === 'nl' 
+                    ? 'Een filosofische verkenning van menselijk potentieel, ethiek en de bouwstenen voor een functionele samenleving.'
+                    : 'A philosophical exploration of human potential, ethics, and the building blocks for a functional society.'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Axioma</div>
-                    <p className="text-sm text-[#444] leading-snug">Het universum is een causaal systeem bestuurd door natuurwetten.</p>
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">
+                      {version === 'nl' ? 'Axioma' : 'Axiom'}
+                    </div>
+                    <p className="text-sm text-[#444] leading-snug">
+                      {version === 'nl' 
+                        ? 'Het universum is een causaal systeem bestuurd door natuurwetten.'
+                        : 'The universe is a causal system governed by natural laws.'}
+                    </p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Missie</div>
-                    <p className="text-sm text-[#444] leading-snug">Het reduceren van entropie door de opbouw van universele vermogens.</p>
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">
+                      {version === 'nl' ? 'Missie' : 'Mission'}
+                    </div>
+                    <p className="text-sm text-[#444] leading-snug">
+                      {version === 'nl' 
+                        ? 'Het reduceren van entropie door de opbouw van universele vermogens.'
+                        : 'Reducing entropy through the cultivation of universal capabilities.'}
+                    </p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">Doel</div>
-                    <p className="text-sm text-[#444] leading-snug">Een lijdenloos bestaan voor alle bewuste wezens van de toekomst.</p>
+                    <div className="text-[10px] uppercase tracking-widest text-[#2980b9] font-bold mb-2">
+                      {version === 'nl' ? 'Doel' : 'Goal'}
+                    </div>
+                    <p className="text-sm text-[#444] leading-snug">
+                      {version === 'nl' 
+                        ? 'Een lijdenloos bestaan voor alle bewuste wezens van de toekomst.'
+                        : 'A suffering-free existence for all conscious beings of the future.'}
+                    </p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setSidebarMode('media')}
                   className="mt-16 px-8 py-4 rounded-full bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#2980b9] transition-all shadow-xl hover:shadow-[#2980b9]/20"
                 >
-                  Start Verkenning
+                  {version === 'nl' ? 'Start Verkenning' : 'Start Exploration'}
                 </button>
               </div>
             </div>
