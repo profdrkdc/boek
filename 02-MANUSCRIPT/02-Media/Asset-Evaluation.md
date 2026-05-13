@@ -70,8 +70,8 @@ Gebruik dit bestand om de volledige "Gouden" generatie van de Sovereign Reality 
 *   **Titel**: "The Systems Engineering Lens: AI as System Architect"
     *   **URL**: [Open](https://notebooklm.google.com/notebook/f034dec2-b5ec-4c2f-bf2a-87845664c94b/artifact/1aafcf08-ae9a-4646-9188-07f7f89297b7)
     *   **Status**: [ DOWNLOADED ] | **Feedback**: EN Audio - Verplaatst naar EN sectie.
-*   **Titel**: "Principe 1 & 2: De Wereld als Bouwwerf"
-    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (45fb6a3b)
+*   **Titel**: "De Vrije Realiteit: De Basisprincipes"
+    *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (45fb6a3b) - Covers P1 t/m P6.
 *   **Titel**: "Principe 3: Informatie-Integriteit"
     *   **Status**: [ DOWNLOADED ] | **Feedback**: NL Generatie (33de2f34)
 *   **Titel**: "De Vrije Realiteit: Systeem-Analyse"
