@@ -182,7 +182,7 @@ function App() {
       },
       {
         id: 'vid-p7',
-        title: 'Principe 7: Verantwoordelijkheid',
+        title: 'Principe 7: De Architecten van de Toekomst',
         type: 'video',
         url: `${baseUrl}/video/NL/Principe_7_Verantwoordelijkheid.mp4`,
         duration: '08:45'
