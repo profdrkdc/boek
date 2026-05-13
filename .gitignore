@@ -1,28 +1,32 @@
-# De basis negeer-regels
-05-ARCHIEF/Legacy-App-Backup/
-00-GEREEDSCHAP/download_en_audio.sh
+# Alles behalve 01 en 02 uitsluiten
+*
+!01-PLATFORM/
+!02-MANUSCRIPT/
+
+# Maar subdirectories en specifieke bestanden uitsluiten
 01-PLATFORM/public/audio/
 02-MANUSCRIPT/02-Media/Audio/
+00-GEREEDSCHAP/
+03-STRATEGIE/
+04-EVOLUTIE/
+05-ARCHIEF/
+.gemini/
+.github/
+lessons-learned/
+src/
+README.md
+
+# Altijd negeren
 node_modules/
 **/node_modules/
 dist/
 **/dist/
-
-# Python omgevingen (beiden varianten negeren)
 venv/
 **/venv/
-nlm_venv/
-**/nlm_venv/
-
-# Git historie van backups negeren (voorkomt "embedded repo" waarschuwingen)
-.git/
-**/.git/
-
-# Omgeving en logs
 .env
 .env.*
 *.log
-
-# OS specifieke bestanden
 .DS_Store
 Thumbs.db
+.git/
+**/.git/
