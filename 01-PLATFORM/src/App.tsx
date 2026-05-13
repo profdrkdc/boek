@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import bookData from './data/book.json'
-import { ChevronLeft, ChevronRight, Headphones, Play, Pause, Volume2, Video, Book, Film } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Headphones, Play, Pause, Video, Book, Film } from 'lucide-react'
 
 interface MediaItem {
   id: string;
