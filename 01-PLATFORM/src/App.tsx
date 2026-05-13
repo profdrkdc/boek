@@ -125,20 +125,6 @@ function App() {
         duration: '17:40'
       },
       {
-        id: 'vid-cr-conv',
-        title: 'Constructief Realisme & Convergentie',
-        type: 'video',
-        url: `${baseUrl}/video/NL/Constructief_Realisme_en_de_Wet_van_Convergentie.mp4`,
-        duration: '06:09'
-      },
-      {
-        id: 'vid-ai-arch',
-        title: 'AI als Systeem-Architect',
-        type: 'video',
-        url: `${baseUrl}/video/NL/AI_als_Systeem_Architect.mp4`,
-        duration: '04:32'
-      },
-      {
         id: 'vid-nl-supreme',
         title: 'De Vrije Realiteit: Overzicht',
         type: 'video',
@@ -251,6 +237,20 @@ function App() {
         type: 'video',
         url: `${baseUrl}/video/EN/Sovereign_Reality_System_Upgrade_Overview.mp4`,
         duration: '07:14'
+      },
+      {
+        id: 'vid-en-constructive',
+        title: 'Constructive Realism and Convergence',
+        type: 'video',
+        url: `${baseUrl}/video/EN/Constructive_Realism_and_Convergence.mp4`,
+        duration: '06:09'
+      },
+      {
+        id: 'vid-en-ai-arch',
+        title: 'AI as System Architect',
+        type: 'video',
+        url: `${baseUrl}/video/EN/AI_as_System_Architect.mp4`,
+        duration: '04:32'
       },
       {
         id: 'vid-en-p1-2',
