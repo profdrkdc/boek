@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const BASE_DIRS = {
-    'nl': path.resolve(__dirname, '../04-EVOLUTIE/Archive-Languages-Extra/01-Nederlands'),
-    'en': path.resolve(__dirname, '../04-EVOLUTIE/Archive-Languages-Extra/02-English')
+    'nl': path.resolve(__dirname, '../02-LIVE/01-Nederlands'),
+    'en': path.resolve(__dirname, '../02-LIVE/02-English')
 };
 
 const OUTPUT_FILE = path.resolve(__dirname, './src/data/book.json');
