@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const BASE_DIRS = {
-    'nl': path.resolve(__dirname, '../02-MANUSCRIPT/01-Teksten/01-Nederlands'),
-    'en': path.resolve(__dirname, '../02-MANUSCRIPT/01-Teksten/02-English')
+    'nl': path.resolve(__dirname, '../04-EVOLUTIE/Archive-Languages-Extra/01-Nederlands'),
+    'en': path.resolve(__dirname, '../04-EVOLUTIE/Archive-Languages-Extra/02-English')
 };
 
 const OUTPUT_FILE = path.resolve(__dirname, './src/data/book.json');
@@ -27,7 +27,7 @@ function getSections(manuscriptDir) {
         console.warn(`Directory not found: ${manuscriptDir}`);
         return [];
     }
-    
+
     const sections = [];
     const entries = fs.readdirSync(manuscriptDir).filter(f => fs.statSync(path.join(manuscriptDir, f)).isDirectory());
 
@@ -41,12 +41,12 @@ function getSections(manuscriptDir) {
     }).forEach(dir => {
         const sectionPath = path.join(manuscriptDir, dir);
         const files = fs.readdirSync(sectionPath).filter(f => f.endsWith('.md'));
-        
+
         const chapters = [];
         files.sort().forEach(file => {
             const filePath = path.join(sectionPath, file);
             const content = fs.readFileSync(filePath, 'utf-8');
-            
+
             chapters.push({
                 id: `${dir}/${file}`,
                 title: cleanTitle(file),
@@ -69,7 +69,8 @@ const multiBookData = {};
 for (const [key, dir] of Object.entries(BASE_DIRS)) {
     console.log(`Processing ${key} from ${dir}...`);
     multiBookData[key] = {
-        title: key.startsWith('en') ? "The Competent Future" : "De Competente Toekomst",
+        title: "Sovereign Reality",
+        subtitle: key.startsWith('en') ? "The Path to Convergence" : "De Weg naar Convergentie",
         author: "Karel",
         sections: getSections(dir)
     };

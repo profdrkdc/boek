@@ -18,7 +18,7 @@ function App() {
   const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
   const [sidebarMode, setSidebarMode] = useState<'media' | 'text'>(() => (localStorage.getItem('app-sidebar-mode') as any) || 'media')
   const [viewMode, setViewMode] = useState<'reader' | 'video'>(() => (localStorage.getItem('app-view-mode') as any) || 'reader')
-  
+
   useEffect(() => {
     localStorage.setItem('app-version', version)
   }, [version])
@@ -38,11 +38,11 @@ function App() {
       localStorage.removeItem(`app-active-chapter-${version}`)
     }
   }, [activeChapterId, version])
-  
+
   // Media State
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentMedia, setCurrentMedia] = useState<MediaItem | null>(null)
-  
+
   // Use a persistent Audio object instead of a DOM element to prevent echo/duplicates
   const audioInstance = useMemo(() => new Audio(), []);
 
@@ -336,10 +336,10 @@ function App() {
       }
     ]
   }
-  
+
   const currentMediaItems = mediaData[version] || []
   const currentBook = (bookData as any)[version] || { sections: [] }
-  
+
   // Flat list of chapters for navigation and index-based switching
   const allChapters: any[] = [];
   currentBook.sections.forEach((section: any) => {
@@ -393,8 +393,8 @@ function App() {
       {/* Sidebar */}
       <aside className="w-[300px] flex flex-col bg-[#f7f7f7] border-r border-[#eaeaea] shrink-0 font-sans text-[15px] z-20">
         <div className="p-6 pb-2">
-          <div 
-            className="flex items-center gap-3 mb-6 group cursor-pointer" 
+          <div
+            className="flex items-center gap-3 mb-6 group cursor-pointer"
             onClick={() => {
               setActiveChapterId(null);
               setViewMode('reader');
@@ -411,37 +411,35 @@ function App() {
               Sovereign Reality
             </span>
           </div>
-          
-            <div className="flex justify-between mb-2">
-              <button 
-                onClick={() => handleVersionChange('nl')}
-                className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'nl' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
-              >
-                Nederlands
-              </button>
-              <button 
-                onClick={() => handleVersionChange('en')}
-                className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'en' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
-              >
-                English
-              </button>
-            </div>
+
+          <div className="flex justify-between mb-2">
+            <button
+              onClick={() => handleVersionChange('nl')}
+              className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'nl' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
+            >
+              Nederlands
+            </button>
+            <button
+              onClick={() => handleVersionChange('en')}
+              className={`text-[11px] uppercase tracking-wider transition-colors ${version === 'en' ? 'text-[#2c3e50] font-bold underline decoration-[#2980b9] decoration-2 underline-offset-4' : 'text-[#aaa] hover:text-[#2c3e50]'}`}
+            >
+              English
+            </button>
+          </div>
 
           <div className="flex bg-[#eee] p-1 rounded-lg mb-4">
-            <button 
+            <button
               onClick={() => setSidebarMode('media')}
-              className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-[11px] font-bold uppercase tracking-wider transition-all ${
-                sidebarMode === 'media' ? 'bg-white text-[#2980b9] shadow-sm' : 'text-[#888] hover:text-[#555]'
-              }`}
+              className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-[11px] font-bold uppercase tracking-wider transition-all ${sidebarMode === 'media' ? 'bg-white text-[#2980b9] shadow-sm' : 'text-[#888] hover:text-[#555]'
+                }`}
             >
               <Film size={14} />
               Media
             </button>
-            <button 
+            <button
               onClick={() => setSidebarMode('text')}
-              className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-[11px] font-bold uppercase tracking-wider transition-all ${
-                sidebarMode === 'text' ? 'bg-white text-[#2980b9] shadow-sm' : 'text-[#888] hover:text-[#555]'
-              }`}
+              className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-[11px] font-bold uppercase tracking-wider transition-all ${sidebarMode === 'text' ? 'bg-white text-[#2980b9] shadow-sm' : 'text-[#888] hover:text-[#555]'
+                }`}
             >
               <Book size={14} />
               Text
@@ -461,11 +459,10 @@ function App() {
                   <button
                     key={item.id}
                     onClick={() => handleMediaClick(item)}
-                    className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group ${
-                      currentMedia?.id === item.id 
+                    className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group ${currentMedia?.id === item.id
                         ? 'bg-white border-[#2980b9] text-[#2980b9] shadow-md'
                         : 'bg-white/40 border-[#eee] text-[#666] hover:bg-white hover:border-[#2980b9]/30'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       <div className={`p-3 rounded-full transition-colors ${currentMedia?.id === item.id ? 'bg-[#2980b9] text-white' : 'bg-[#f0f0f0] text-[#999] group-hover:bg-[#2980b9]/10 group-hover:text-[#2980b9]'}`}>
@@ -504,11 +501,10 @@ function App() {
                             setViewMode('reader');
                             document.querySelector('main')?.scrollTo(0, 0);
                           }}
-                          className={`w-full text-left py-1 px-3 rounded text-[14px] transition-colors leading-tight ${
-                            chap.id === activeChapterId && viewMode === 'reader'
+                          className={`w-full text-left py-1 px-3 rounded text-[14px] transition-colors leading-tight ${chap.id === activeChapterId && viewMode === 'reader'
                               ? 'text-[#2980b9] font-semibold bg-white shadow-sm ring-1 ring-black/5'
                               : 'text-[#666] hover:text-[#2980b9]'
-                          }`}
+                            }`}
                         >
                           {chap.title}
                         </button>
@@ -528,7 +524,7 @@ function App() {
               <div className="text-[10px] text-[#aaa] uppercase tracking-widest mb-1 font-bold">{version === 'nl' ? 'Nu aan het spelen' : 'Now playing'}</div>
               <div className="text-xs font-bold text-[#333] truncate">{currentMedia?.title}</div>
             </div>
-            <button 
+            <button
               onClick={() => {
                 if (isPlaying) audioInstance.pause();
                 else audioInstance.play().catch((e: any) => console.error(e));
@@ -547,14 +543,14 @@ function App() {
           <div className="flex items-center gap-4">
             {viewMode === 'reader' && currentChapter ? (
               <>
-                <button 
+                <button
                   disabled={currentIndex <= 0}
                   onClick={() => setActiveChapterId(allChapters[currentIndex - 1].id)}
                   className="text-[#aaa] hover:text-[#333] disabled:opacity-20 transition-colors p-1"
                 >
                   <ChevronLeft size={18} />
                 </button>
-                <button 
+                <button
                   disabled={currentIndex >= allChapters.length - 1}
                   onClick={() => setActiveChapterId(allChapters[currentIndex + 1].id)}
                   className="text-[#aaa] hover:text-[#333] disabled:opacity-20 transition-colors p-1"
@@ -567,7 +563,7 @@ function App() {
                 </span>
               </>
             ) : viewMode === 'video' ? (
-              <button 
+              <button
                 onClick={() => setViewMode('reader')}
                 className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#2980b9] hover:text-[#333] transition-colors"
               >
@@ -582,17 +578,17 @@ function App() {
           {viewMode === 'video' && currentMedia ? (
             <div className="w-full h-full bg-black flex flex-col items-center justify-center p-8 animate-in fade-in zoom-in-95 duration-500">
               <div className="max-w-5xl w-full aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-2xl relative group">
-                <video 
-                  src={currentMedia.url} 
-                  controls 
-                  autoPlay 
+                <video
+                  src={currentMedia.url}
+                  controls
+                  autoPlay
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="mt-8 max-w-2xl text-center">
                 <h2 className="text-white text-2xl font-normal mb-4 font-sans">{currentMedia.title}</h2>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  {version === 'nl' 
+                  {version === 'nl'
                     ? 'Je kijkt momenteel naar de audiovisuele presentatie. Gebruik de zijbalk om terug te gaan naar de tekst of om andere media te kiezen.'
                     : 'You are currently watching the audiovisual presentation. Use the sidebar to return to the text or choose other media.'}
                 </p>
@@ -602,7 +598,7 @@ function App() {
             <div className="p-12 lg:p-24 pt-16 bg-gradient-to-b from-white to-[#fdfdfd] animate-in fade-in duration-500">
               <div className="max-w-[800px] mx-auto">
                 <article className="prose prose-lg">
-                  <ReactMarkdown 
+                  <ReactMarkdown
                     components={{
                       // Strip out audio and iframe elements from the markdown content
                       audio: () => null,
@@ -621,16 +617,14 @@ function App() {
             <div className="w-full h-full flex items-center justify-center p-12 lg:p-24 bg-[#fdfdfd] animate-in fade-in zoom-in-95 duration-1000">
               <div className="max-w-3xl text-center">
                 <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-[#2980b9]/5 border border-[#2980b9]/10 text-[#2980b9] text-[10px] uppercase tracking-[0.4em] font-black animate-pulse">
-                  Foundational Synthesis v3.1
+                  {version === 'nl' ? 'De Vrije Realiteit' : 'The Sovereign Reality'}
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-serif text-[#1a1a1a] mb-8 leading-tight">
-                  {version === 'nl' ? 'Verantwoordelijkheid tegenover de Toekomst' : 'Responsibility towards the Future'}
+                  {currentBook.title}
                 </h1>
                 <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#2980b9] to-transparent mx-auto mb-10 opacity-30"></div>
                 <p className="text-xl lg:text-2xl text-[#666] font-light leading-relaxed mb-12 italic">
-                  {version === 'nl' 
-                    ? 'Een filosofische verkenning van menselijk potentieel, ethiek en de bouwstenen voor een functionele samenleving.'
-                    : 'A philosophical exploration of human potential, ethics, and the building blocks for a functional society.'}
+                  {currentBook.subtitle}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
@@ -638,9 +632,9 @@ function App() {
                       {version === 'nl' ? 'Axioma' : 'Axiom'}
                     </div>
                     <p className="text-sm text-[#444] leading-snug">
-                      {version === 'nl' 
-                        ? 'Het universum is een causaal systeem bestuurd door natuurwetten.'
-                        : 'The universe is a causal system governed by natural laws.'}
+                      {version === 'nl'
+                        ? 'De werkelijkheid is kenbaar en maakbaar door rede en mededogen.'
+                        : 'Reality is knowable and malleable through reason and compassion.'}
                     </p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
@@ -648,9 +642,9 @@ function App() {
                       {version === 'nl' ? 'Missie' : 'Mission'}
                     </div>
                     <p className="text-sm text-[#444] leading-snug">
-                      {version === 'nl' 
-                        ? 'Het reduceren van entropie door de opbouw van universele vermogens.'
-                        : 'Reducing entropy through the cultivation of universal capabilities.'}
+                      {version === 'nl'
+                        ? 'Het herstellen van menselijke soevereiniteit en het uitbannen van lijden.'
+                        : 'Restoring human sovereignty and eliminating suffering.'}
                     </p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white border border-[#eee] shadow-sm hover:shadow-md transition-shadow">
@@ -658,17 +652,17 @@ function App() {
                       {version === 'nl' ? 'Doel' : 'Goal'}
                     </div>
                     <p className="text-sm text-[#444] leading-snug">
-                      {version === 'nl' 
-                        ? 'Een lijdenloos bestaan voor alle bewuste wezens van de toekomst.'
-                        : 'A suffering-free existence for all conscious beings of the future.'}
+                      {version === 'nl'
+                        ? 'Een wereld waarin competentie in dienst staat van universele zorg.'
+                        : 'A world where competence serves universal care.'}
                     </p>
                   </div>
                 </div>
-                <button 
-                  onClick={() => setSidebarMode('media')}
+                <button
+                  onClick={() => setSidebarMode('text')}
                   className="mt-16 px-8 py-4 rounded-full bg-[#1a1a1a] text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#2980b9] transition-all shadow-xl hover:shadow-[#2980b9]/20"
                 >
-                  {version === 'nl' ? 'Start Verkenning' : 'Start Exploration'}
+                  {version === 'nl' ? 'Start de Reis' : 'Start the Journey'}
                 </button>
               </div>
             </div>
@@ -679,4 +673,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
