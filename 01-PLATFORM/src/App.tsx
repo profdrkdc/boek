@@ -14,6 +14,7 @@ interface MediaItem {
 
 function App() {
   const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
+  const mediaBaseUrl = 'https://media.githubusercontent.com/media/profdrkdc/boek/main/01-PLATFORM/public';
   const [version, setVersion] = useState(() => localStorage.getItem('app-version') || 'nl')
   const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
   const [sidebarMode, setSidebarMode] = useState<'media' | 'text'>(() => (localStorage.getItem('app-sidebar-mode') as any) || 'media')
@@ -21,6 +22,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('app-version', version)
+    document.title = version === 'nl' ? 'De Vrije Realiteit' : 'Sovereign Reality'
   }, [version])
 
   useEffect(() => {
@@ -91,119 +93,119 @@ function App() {
         id: '9133fb61',
         title: 'Herschrijf de software van je bestaan',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Herschrijf_de_software_van_je_bestaan.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Herschrijf_de_software_van_je_bestaan.m4a`,
         duration: '32:46'
       },
       {
         id: '84ecc8ba',
         title: 'Menselijk lijden is een biologische softwarefout',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Menselijk_lijden_is_een_biologische_softwarefout.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Menselijk_lijden_is_een_biologische_softwarefout.m4a`,
         duration: '21:05'
       },
       {
         id: 'b65e1959',
         title: 'De definitieve patch voor de mensheid',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/De_definitieve_patch_voor_de_mensheid.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/De_definitieve_patch_voor_de_mensheid.m4a`,
         duration: '22:15'
       },
       {
         id: '3d796276',
         title: 'De dood is slechts een softwarefout',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/De_dood_is_slechts_een_softwarefout.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/De_dood_is_slechts_een_softwarefout.m4a`,
         duration: '20:10'
       },
       {
         id: '1762e392',
         title: 'AI als medicijn voor menselijk lijden',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/AI_als_medicijn_voor_menselijk_lijden.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/AI_als_medicijn_voor_menselijk_lijden.m4a`,
         duration: '18:45'
       },
       {
         id: '5bea991b',
         title: 'Waarom AI ons wiskundig nodig heeft',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Waarom_AI_ons_wiskundig_nodig_heeft.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Waarom_AI_ons_wiskundig_nodig_heeft.m4a`,
         duration: '19:30'
       },
       {
         id: '972dfe15',
         title: 'Onze hersenen draaien op verouderde software',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Onze_hersenen_draaien_op_verouderde_software.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Onze_hersenen_draaien_op_verouderde_software.m4a`,
         duration: '21:55'
       },
       {
         id: '0099e7b7',
         title: 'Menselijk lijden als herstelbare systeemfout',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Menselijk_lijden_als_herstelbare_systeemfout.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Menselijk_lijden_als_herstelbare_systeemfout.m4a`,
         duration: '18:20'
       },
       {
         id: 'a7180dd0',
         title: 'Debug de wereld als defecte software',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/Debug_de_wereld_als_defecte_software.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/Debug_de_wereld_als_defecte_software.m4a`,
         duration: '20:45'
       },
       {
         id: 'ffba6042',
         title: 'De mens als biologische bootloader',
         type: 'audio',
-        url: `${baseUrl}/audio/NL/De_mens_als_biologische_bootloader.m4a`,
+        url: `${mediaBaseUrl}/audio/NL/De_mens_als_biologische_bootloader.m4a`,
         duration: '17:40'
       },
       {
         id: 'vid-nl-supreme',
         title: 'De Vrije Realiteit: Overzicht',
         type: 'video',
-        url: `${baseUrl}/video/NL/Sovereign_Reality_Supreme_Overview_NL.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Sovereign_Reality_Supreme_Overview_NL.mp4`,
         duration: '09:56'
       },
       {
         id: 'vid-nl-basis',
         title: 'De Vrije Realiteit: De Basisprincipes',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_1_en_2_Natuurwetten.mp4`,
         duration: '06:41'
       },
       {
         id: 'vid-p3',
         title: 'Principe 3: Informatie-Integriteit',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_3_Informatie_Integriteit.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_3_Informatie_Integriteit.mp4`,
         duration: '07:25'
       },
       {
         id: 'vid-p4',
         title: 'De Vrije Realiteit: Systeem-Analyse',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_4_Radicale_Transparantie.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_4_Radicale_Transparantie.mp4`,
         duration: '09:29'
       },
       {
         id: 'vid-p6',
         title: 'Principe 6: Competentie-Hiërarchie',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_6_Competentie_Hierarchie.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_6_Competentie_Hierarchie.mp4`,
         duration: '10:00'
       },
       {
         id: 'vid-p7',
         title: 'Principe 7: De Architecten van de Toekomst',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_7_Verantwoordelijkheid.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_7_Verantwoordelijkheid.mp4`,
         duration: '08:45'
       },
       {
         id: 'vid-p12',
         title: 'Principe 12: Centaur Intelligentie',
         type: 'video',
-        url: `${baseUrl}/video/NL/Principe_12_Centaur_Intelligentie.mp4`,
+        url: `${mediaBaseUrl}/video/NL/Principe_12_Centaur_Intelligentie.mp4`,
         duration: '11:10'
       }
     ],
@@ -212,126 +214,126 @@ function App() {
         id: 'upgrading-humanity',
         title: 'Upgrading humanity to a Sovereign Reality',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/Upgrading_humanity_to_a_Sovereign_Reality.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/Upgrading_humanity_to_a_Sovereign_Reality.m4a`,
         duration: '22:25'
       },
       {
         id: 'patching-human-legacy',
         title: 'Patching the Human Legacy Kernel',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/Patching_the_Human_Legacy_Kernel.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/Patching_the_Human_Legacy_Kernel.m4a`,
         duration: '18:59'
       },
       {
         id: 'patching-software-bugs',
         title: 'Patching the software bugs of humanity',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/Patching_the_software_bugs_of_humanity.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/Patching_the_software_bugs_of_humanity.m4a`,
         duration: '22:06'
       },
       {
         id: 'human-suffering-bug',
         title: 'Human suffering is a technical bug',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/Human_suffering_is_a_technical_bug.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/Human_suffering_is_a_technical_bug.m4a`,
         duration: '16:54'
       },
       {
         id: 'debugging-legacy-kernel',
         title: 'Debugging the legacy kernel of humanity',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/Debugging_the_legacy_kernel_of_humanity.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/Debugging_the_legacy_kernel_of_humanity.m4a`,
         duration: '21:23'
       },
       {
         id: 'software-patch-humanity',
         title: 'A software patch for humanity',
         type: 'audio',
-        url: `${baseUrl}/audio/EN/A_software_patch_for_humanity.m4a`,
+        url: `${mediaBaseUrl}/audio/EN/A_software_patch_for_humanity.m4a`,
         duration: '17:19'
       },
       {
         id: 'vid-en-supreme',
         title: 'Sovereign Reality: Supreme Overview',
         type: 'video',
-        url: `${baseUrl}/video/EN/Sovereign_Reality_Supreme_Overview.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Sovereign_Reality_Supreme_Overview.mp4`,
         duration: '07:38'
       },
       {
         id: 'vid-en-upgrade',
         title: 'Sovereign Reality: System Upgrade Overview',
         type: 'video',
-        url: `${baseUrl}/video/EN/Sovereign_Reality_System_Upgrade_Overview.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Sovereign_Reality_System_Upgrade_Overview.mp4`,
         duration: '07:14'
       },
       {
         id: 'vid-en-constructive',
         title: 'Constructive Realism and Convergence',
         type: 'video',
-        url: `${baseUrl}/video/EN/Constructive_Realism_and_Convergence.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Constructive_Realism_and_Convergence.mp4`,
         duration: '06:09'
       },
       {
         id: 'vid-en-ai-arch',
         title: 'The Systems Engineering Lens: AI as System Architect',
         type: 'video',
-        url: `${baseUrl}/video/EN/AI_as_System_Architect.mp4`,
+        url: `${mediaBaseUrl}/video/EN/AI_as_System_Architect.mp4`,
         duration: '04:32'
       },
       {
         id: 'vid-en-p1-2',
         title: 'Principle 1 & 2: Natural Laws',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_1_and_2_Natural_Laws.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_1_and_2_Natural_Laws.mp4`,
         duration: '09:27'
       },
       {
         id: 'vid-en-p3',
         title: 'Principle 3: Information Integrity',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_3_Information_Integrity.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_3_Information_Integrity.mp4`,
         duration: '06:27'
       },
       {
         id: 'vid-en-p4',
         title: 'Principle 4: Radical Transparency',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_4_Radical_Transparency.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_4_Radical_Transparency.mp4`,
         duration: '06:27'
       },
       {
         id: 'vid-en-p5',
         title: 'Principle 5: Decentralized Authority',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_5_Decentralized_Authority.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_5_Decentralized_Authority.mp4`,
         duration: '08:28'
       },
       {
         id: 'vid-en-p6',
         title: 'Principle 6: Competence Hierarchy',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_6_Competence_Hierarchy.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_6_Competence_Hierarchy.mp4`,
         duration: '09:32'
       },
       {
         id: 'vid-en-p7',
         title: 'Principle 7: Responsibility',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_7_Responsibility.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_7_Responsibility.mp4`,
         duration: '07:52'
       },
       {
         id: 'vid-en-p12',
         title: 'Principle 12: Centaur Intelligence',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_12_Centaur_Intelligence.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_12_Centaur_Intelligence.mp4`,
         duration: '08:19'
       },
       {
         id: 'vid-en-p12-v2',
         title: 'Principle 12: Centaur Intelligence (Deep Dive)',
         type: 'video',
-        url: `${baseUrl}/video/EN/Principle_12_Centaur_Intelligence_v2.mp4`,
+        url: `${mediaBaseUrl}/video/EN/Principle_12_Centaur_Intelligence_v2.mp4`,
         duration: '09:39'
       }
     ]
@@ -408,7 +410,7 @@ function App() {
             </div>
             <div className="h-4 w-[1px] bg-[#ddd]"></div>
             <span className="text-[10px] uppercase tracking-[0.3em] font-black text-[#555] opacity-80 group-hover:opacity-100 transition-opacity">
-              Sovereign Reality
+              {version === 'nl' ? 'De Vrije Realiteit' : 'Sovereign Reality'}
             </span>
           </div>
 
