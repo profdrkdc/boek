@@ -13,7 +13,6 @@ interface MediaItem {
 }
 
 function App() {
-  const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
   const mediaBaseUrl = 'https://media.githubusercontent.com/media/profdrkdc/boek/main/01-PLATFORM/public';
   const [version, setVersion] = useState(() => localStorage.getItem('app-version') || 'nl')
   const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
