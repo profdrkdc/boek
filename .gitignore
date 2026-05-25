@@ -30,3 +30,7 @@ nlm_venv/
 
 # Gemini / AI temporary files
 .gemini/tmp/
+
+# Temp/media asset dirs (embedded git repos)
+tmp_assets/
+tmp_video_assets/

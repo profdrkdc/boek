@@ -12,6 +12,18 @@ interface MediaItem {
   thumbnail?: string;
 }
 
+function interleaveMedia(items: MediaItem[]): MediaItem[] {
+  const audio = items.filter(i => i.type === 'audio')
+  const video = items.filter(i => i.type === 'video')
+  const result: MediaItem[] = []
+  const maxLen = Math.max(audio.length, video.length)
+  for (let i = 0; i < maxLen; i++) {
+    if (i < audio.length) result.push(audio[i])
+    if (i < video.length) result.push(video[i])
+  }
+  return result
+}
+
 function App() {
   const mediaBaseUrl = 'https://media.githubusercontent.com/media/profdrkdc/boek/main/01-PLATFORM/public';
   const [version, setVersion] = useState(() => localStorage.getItem('app-version') || 'nl')
@@ -338,7 +350,7 @@ function App() {
     ]
   }
 
-  const currentMediaItems = mediaData[version] || []
+  const currentMediaItems = useMemo(() => interleaveMedia(mediaData[version] || []), [version])
   const currentBook = (bookData as any)[version] || { sections: [] }
 
   // Flat list of chapters for navigation and index-based switching
