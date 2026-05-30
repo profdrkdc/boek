@@ -33,15 +33,15 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
-          cache-dependency-path: VT/01-PLATFORM/pnpm-lock.yaml
+          cache-dependency-path: 01-PLATFORM/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        working-directory: VT/01-PLATFORM
+        working-directory: 01-PLATFORM
 
       - name: Build
         run: pnpm build
-        working-directory: VT/01-PLATFORM
+        working-directory: 01-PLATFORM
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -49,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './VT/01-PLATFORM/dist'
+          path: './01-PLATFORM/dist'
 
   deploy:
     environment:
