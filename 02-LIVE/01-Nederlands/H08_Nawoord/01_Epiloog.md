@@ -17,7 +17,7 @@ Streef ernaar om de meest bekwame versie van jezelf te worden. Niet voor de roem
 
 Zij die deze stap zetten, zijn de stille ingenieurs van de Eeuw van Bloei. Zij zijn degenen die door hun eigen transformatie de weg plaveien voor de kinderen van morgen.
 
-De toekomst is niet iets wat ons overkomt. Het is iets wat we bouwen, beslissing na beslissing, systeem na systeem. De Vrije Realiteit is geen verre droom meer; zij is een keuze die je op dit eigenste moment kunt maken.
+De toekomst is niet iets wat ons overkomt. Het is iets wat we bouwen, beslissing na beslissing, systeem na systeem. En niet elke beslissing is eenvoudig: soms botst wat goed is voor mensen van nu met wat goed is voor mensen van later. We hebben gezien dat we die spanning niet kunnen wegrekenen — de toekomst blijft principieel onzeker. Wat we wél kunnen doen, is eerlijk beslissen: met de zekerheid van het heden als kompas, en de bescheidenheid om te weten dat onze modellen van de verre toekomst altijd onvolledig zijn. De Vrije Realiteit is geen verre droom meer; zij is een keuze die je op dit eigenste moment kunt maken.
 
 De gereedschappen liggen in je handen. Het fundament is gelegd. De stilte na de diagnose is voorbij.
 

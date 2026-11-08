@@ -18,4 +18,4 @@ Strive to become the most competent version of yourself. Identify your own bugs,
 
 This is not a path to wealth or fame. It is a path of duty and meaning. Those who take this step are the builders, the problem-solvers, the silent engineers of an aligned future.
 
-The future is not something that happens to us. It is something that is constructed, bit by bit, decision after decision. The future belongs to the converged human. The first step is yours. Now.
+The future is not something that happens to us. It is something that is constructed, bit by bit, decision after decision. And not every decision is simple: sometimes what is good for the people of today collides with what is good for the people of tomorrow. We have seen that this tension cannot be computed away — the future remains structurally uncertain. What we can do is decide honestly: with the certainty of the present as our compass, and the humility to acknowledge that our models of the distant future are always incomplete. The future belongs to the converged human. The first step is yours. Now.
