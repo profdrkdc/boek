@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Bouw de Zingeving-pagina's voor kdc-apps.web.app.
-Bron: ~/C/boek/avebw-2/02-DRAFTS/*.md (FINAL-versies)
+Bron: ~/C/freeality-film/00-bronnen/avebw-2/02-DRAFTS/*.md (FINAL-versies)
 Doel: ~/workspace/kdc-apps/kdc-levensplan/public/zingeving/
 Gebruik: python3 build_zingeving_site.py [--deploy]
 """
 import markdown, pathlib, sys, re
 
-SRC = pathlib.Path.home() / "C/boek/avebw-2/02-DRAFTS"
+SRC = pathlib.Path.home() / "C/freeality-film/00-bronnen/avebw-2/02-DRAFTS"
 DST = pathlib.Path.home() / "workspace/kdc-apps/kdc-levensplan/public/zingeving"
 
 BASE = "https://kdc-apps.web.app/zingeving/"

@@ -83,3 +83,4 @@ There is no celestial rescue team. There is no cosmic safety net.
 * If we want to experience **Heaven**, we must realize that it is not a destination we go to after we die, but a civilizational monument we build brick by brick for the generations who will carry our DNA and our ideas into the deep future.
 
 We are the bridge between the animalistic, short-sighted drives of our evolutionary past and the infinite, coordinated potential of our future. Our responsibility is absolute.
+

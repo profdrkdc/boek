@@ -83,3 +83,4 @@ Er is geen kosmische reddingsbrigade.
 * Als we de **Hemel** willen ervaren, moeten we beseffen dat dit geen bestemming is na de dood, maar een beschavingsmonument dat we steen voor steen optrekken voor de generaties die onze ideeën en ons DNA dragen.
 
 Wij zijn de brug tussen de dierlijke reflexen van ons verleden en het oneindige, gecoördineerde potentieel van onze toekomst. Onze verantwoordelijkheid is absoluut.
+
